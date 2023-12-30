@@ -26,7 +26,8 @@ import Grid from "@mui/material/Grid";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-
+// import { logo } from "../../../../assests/images";
+import logo from "../../../assets/imagesWeb/images/mainSection/logo.png";
 function DefaultFooter({ content }) {
   const { brand, socials, menus, copyright } = content;
 
@@ -37,9 +38,9 @@ function DefaultFooter({ content }) {
           <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
             <MKBox>
               <Link to={brand.route}>
-                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" mb={2} />
+                <MKBox component="img" src={logo} alt={brand.name} maxWidth="2rem" mb={2} />
               </Link>
-              <MKTypography variant="h6">{brand.name}</MKTypography>
+              <MKTypography variant="h6">{"Kheeti BaaZar"}</MKTypography>
             </MKBox>
             <MKBox display="flex" alignItems="center" mt={3}>
               {socials.map(({ icon, link }, key) => (
