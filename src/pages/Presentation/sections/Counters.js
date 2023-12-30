@@ -33,8 +33,8 @@ function Counters() {
             <DefaultCounterCard
               count={70}
               suffix="+"
-              title="Coded Elements"
-              description="From buttons, to inputs, navbars, alerts or cards, you are covered"
+              title="Product Items"
+              description="Renowned worldwide for its distinctive aroma and long, slender grains, Basmati rice from India is a culinary treasure"
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
@@ -42,16 +42,16 @@ function Counters() {
             <DefaultCounterCard
               count={15}
               suffix="+"
-              title="Design Blocks"
-              description="Mix the sections, change the colors and unleash your creativity"
+              title="States"
+              description="our mission extends beyond boundaries. With a steadfast commitment to agricultural advancement, we proudly operate across numerous cities, reaching out to farmers far and wide."
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={4}
-              title="Pages"
-              description="Save 3-4 weeks of work when you use our pre-made pages for your website"
+              title="Parterns"
+              description=" we thrive on collaboration and partnership, recognizing the power of synergy in transforming agricultural landscapes."
             />
           </Grid>
         </Grid>
