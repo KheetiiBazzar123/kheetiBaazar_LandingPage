@@ -85,7 +85,7 @@ function Presentation() {
                 },
               })}
             >
-              Kheeti Bazar{" "}
+              Kheetii Bazaar{" "}
             </MKTypography>
             <MKTypography
               variant="body1"

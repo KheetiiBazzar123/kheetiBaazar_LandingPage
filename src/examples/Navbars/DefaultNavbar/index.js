@@ -551,7 +551,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: " Kheeti BaaZar",
+  brand: " Kheetii BaZaar",
   transparent: false,
   light: false,
   action: false,
