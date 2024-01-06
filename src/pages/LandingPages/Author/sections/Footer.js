@@ -37,7 +37,7 @@ function Footer() {
             mb={{ xs: 3, lg: 0 }}
           >
             <MKTypography variant="h6" textTransform="uppercase" mb={{ xs: 2, lg: 3 }}>
-              Material Design
+              Kheeti Baazar
             </MKTypography>
             <Stack
               component="ul"
@@ -55,7 +55,7 @@ function Footer() {
                   fontWeight="regular"
                   opacity={0.8}
                   component={Link}
-                  href="https://www.creative-tim.com"
+                  href="/#"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -68,7 +68,7 @@ function Footer() {
                   fontWeight="regular"
                   opacity={0.8}
                   component={Link}
-                  href="https://www.creative-tim.com/presentation"
+                  href="/#"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -81,7 +81,7 @@ function Footer() {
                   fontWeight="regular"
                   opacity={0.8}
                   component={Link}
-                  href="https://www.creative-tim.com/blog"
+                  href="#/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -94,7 +94,7 @@ function Footer() {
                   fontWeight="regular"
                   opacity={0.8}
                   component={Link}
-                  href="https://www.creative-tim.com"
+                  href="/#"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -103,8 +103,8 @@ function Footer() {
               </MKBox>
             </Stack>
             <MKTypography variant="button" opacity={0.8}>
-              Copyright © <script>document.write(new Date().getFullYear())</script>2021 Material
-              Design by Creative Tim.
+              Copyright © <script>document.write(new Date().getFullYear())</script>2021 Kheeti
+              BaaZar.
             </MKTypography>
           </Grid>
           <Grid item xs={12} lg={6} ml="auto" textAlign={{ xs: "center", lg: "right" }}>
