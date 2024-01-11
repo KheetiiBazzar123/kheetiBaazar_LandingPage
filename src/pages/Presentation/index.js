@@ -17,6 +17,7 @@ Coded by www.creative-tim.com
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
 import heroImage from "../../assets/imagesWeb/images/mainSection/HeroImage.jpg";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
@@ -112,17 +113,22 @@ function Presentation() {
         }}
       >
         <Counters />
-
         <Container className="image-container">
           <Grid container spacing={3}>
-            <Grid item xs={12} lg={4} className="image-grid">
-              <img src={card1} alt="card" className="cardImages" />
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
+              <Card className="card-container">
+                <CardMedia component="img" image={card1} alt="card" className="cardImage" />
+              </Card>
             </Grid>
-            <Grid item xs={12} lg={4} className="image-grid">
-              <img src={card2} alt="card" className="cardImages" />
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
+              <Card className="card-container">
+                <CardMedia component="img" image={card2} alt="card" className="cardImage" />
+              </Card>
             </Grid>
-            <Grid item xs={12} lg={4} className="image-grid">
-              <img src={card3} alt="card" className="cardImages" />
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
+              <Card className="card-container">
+                <CardMedia component="img" image={card3} alt="card" className="cardImage" />
+              </Card>
             </Grid>
           </Grid>
         </Container>

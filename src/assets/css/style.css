@@ -1,51 +1,35 @@
-.cardImages {
-  width: 27vw;
-  height: 55vh;
+.cardImage {
+  width: 30vw;
+  height: 40vh;
   object-fit: cover;
+  padding: 5px;
 }
 
-@media (min-width: 1200px) {
-  .cardImages {
-    width: 25vw;
-    height: 49vh;
-    object-fit: cover;
-  }
+.card-container {
+  color: #000;
+  background-color: #fff !important;
+  border-radius: 8px 8px 0px 0px !important;
 }
-@media (min-width: 900px) {
-  .cardImages {
-    width: 22vw;
-    height: 30vh;
-    object-fit: cover;
-  }
+
+.card-container:hover {
+  transform: translateY(-5px); /* Slight raise effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover for a 'lifting' effect */
 }
-@media (min-width: 768px) {
-  .image-grid {
-    max-width: 33% !important;
-  }
+.service-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px; /* Assuming default spacing is 8px */
+  border-radius: 4px; /* This can be adjusted to match your design */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+  background-color: white;
+  margin: auto;
+  max-width: 345px;
+  height: 100%;
 }
-@media (min-width: 768px) {
-  .cardImages {
-    width: 26vw;
-    height: 30vh;
-    object-fit: cover;
-  }
-}
-@media (min-width: 600px) {
-  .image-grid {
-    max-width: 100% !important;
-  }
-}
-@media (min-width: 600px) {
-  .cardImages {
-    width: 75vw;
-    height: 34vh;
-    object-fit: cover;
-  }
-}
-@media (min-width: 420px) {
-  .cardImages {
-    width: 75vw;
-    height: 34vh;
-    object-fit: cover;
-  }
+
+.service-card-container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
