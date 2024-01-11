@@ -3,3 +3,49 @@
   height: 55vh;
   object-fit: cover;
 }
+
+@media (min-width: 1200px) {
+  .cardImages {
+    width: 25vw;
+    height: 49vh;
+    object-fit: cover;
+  }
+}
+@media (min-width: 900px) {
+  .cardImages {
+    width: 22vw;
+    height: 30vh;
+    object-fit: cover;
+  }
+}
+@media (min-width: 768px) {
+  .image-grid {
+    max-width: 33% !important;
+  }
+}
+@media (min-width: 768px) {
+  .cardImages {
+    width: 26vw;
+    height: 30vh;
+    object-fit: cover;
+  }
+}
+@media (min-width: 600px) {
+  .image-grid {
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 600px) {
+  .cardImages {
+    width: 75vw;
+    height: 34vh;
+    object-fit: cover;
+  }
+}
+@media (min-width: 420px) {
+  .cardImages {
+    width: 75vw;
+    height: 34vh;
+    object-fit: cover;
+  }
+}

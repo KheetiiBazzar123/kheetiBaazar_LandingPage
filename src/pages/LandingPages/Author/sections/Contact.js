@@ -84,7 +84,7 @@ function Contact() {
                         ml={2}
                         fontWeight="regular"
                       >
-                        (+40) 772 100 200
+                        876250976
                       </MKTypography>
                     </MKBox>
                     <MKBox display="flex" color="white" p={1}>
@@ -99,7 +99,7 @@ function Contact() {
                         ml={2}
                         fontWeight="regular"
                       >
-                        hello@creative-tim.com
+                        Kheeti BaaZar
                       </MKTypography>
                     </MKBox>
                     <MKBox display="flex" color="white" p={1}>

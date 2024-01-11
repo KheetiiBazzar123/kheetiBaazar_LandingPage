@@ -48,7 +48,7 @@ import card1 from "../../assets/imagesWeb/images/cardImages/card1.jpg";
 import card2 from "../../assets/imagesWeb/images/cardImages/card2.jpg";
 import card3 from "../../assets/imagesWeb/images/cardImages/dcard3.jpg";
 function Presentation() {
-  console.log("routes", routes);
+  // console.log("routes", routes);
   return (
     <>
       <DefaultNavbar
@@ -112,55 +112,16 @@ function Presentation() {
         }}
       >
         <Counters />
-        {/* <Information /> */}
-        {/* <DesignBlocks /> */}
-        {/* <Pages /> */}
-        {/* <Container sx={{ mt: 6 }}>
-          <BuiltByDevelopers />
-        </Container> */}
-        <Container>
+
+        <Container className="image-container">
           <Grid container spacing={3}>
-            <Grid item xs={12} lg={4}>
-              {/* <FilledInfoCard
-                variant="gradient"
-                color="info"
-                icon="flag"
-                title="Getting Started"
-                description="Check the possible ways of working with our product and the necessary files for building your own project."
-                action={{
-                  type: "external",
-                  route: "/#",
-                  label: "Let's start",
-                }}
-              /> */}
+            <Grid item xs={12} lg={4} className="image-grid">
               <img src={card1} alt="card" className="cardImages" />
             </Grid>
-            <Grid item xs={12} lg={4}>
-              {/* <FilledInfoCard
-                color="info"
-                icon="precision_manufacturing"
-                title="Plugins"
-                description="Get inspiration and have an overview about the plugins that we used to create the Material Kit."
-                action={{
-                  type: "external",
-                  route: "/#",
-                  label: "Read more",
-                }}
-              /> */}
+            <Grid item xs={12} lg={4} className="image-grid">
               <img src={card2} alt="card" className="cardImages" />
             </Grid>
-            <Grid item xs={12} lg={4}>
-              {/* <FilledInfoCard
-                color="info"
-                icon="apps"
-                title="Components"
-                description="Material Kit is giving you a lot of pre-made components, that will help you to build UI's faster."
-                action={{
-                  type: "external",
-                  route: "/#",
-                  label: "Read more",
-                }}
-              /> */}
+            <Grid item xs={12} lg={4} className="image-grid">
               <img src={card3} alt="card" className="cardImages" />
             </Grid>
           </Grid>
@@ -168,7 +129,7 @@ function Presentation() {
         <Testimonials />
         {/* <Download /> */}
         <MKBox pt={18} pb={6}>
-          <Container>
+          <Container className="image-container">
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
                 <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
