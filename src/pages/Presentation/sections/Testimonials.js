@@ -62,10 +62,8 @@ function Information() {
           </Grid>
         </Container>
         <Divider sx={{ my: 6 }} />
-
         <ServicesComponent />
         <Divider sx={{ my: 6 }} />
-
         <WhoWeAreComponent />
         <Divider sx={{ my: 6 }} />
         <Grid container spacing={3} justifyContent="center">

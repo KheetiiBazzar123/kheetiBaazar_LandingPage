@@ -48,6 +48,7 @@ import footerRoutes from "footer.routes";
 import card1 from "../../assets/imagesWeb/images/cardImages/card1.jpg";
 import card2 from "../../assets/imagesWeb/images/cardImages/card2.jpg";
 import card3 from "../../assets/imagesWeb/images/cardImages/dcard3.jpg";
+import SliderSection from "./sections/SliderSection";
 function Presentation() {
   // console.log("routes", routes);
   return (
@@ -133,6 +134,7 @@ function Presentation() {
           </Grid>
         </Container>
         <Testimonials />
+        <SliderSection />
         {/* <Download /> */}
         <MKBox pt={18} pb={6}>
           <Container className="image-container">
