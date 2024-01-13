@@ -13,23 +13,24 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+// import { useState } from "react";
 
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Switch from "@mui/material/Switch";
+// import Switch from "@mui/material/Switch";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import { Link } from "react-router-dom";
 
 function FormSimple() {
-  const [checked, setChecked] = useState(true);
+  // const [checked, setChecked] = useState(true);
 
-  const handleChecked = () => setChecked(!checked);
+  // const handleChecked = () => setChecked(!checked);
 
   return (
     <MKBox component="section" py={12}>
@@ -53,9 +54,12 @@ function FormSimple() {
                   <MKInput variant="standard" type="email" label="Email Address" fullWidth />
                 </Grid>
                 <Grid item xs={12}>
+                  <MKInput variant="standard" type="number" label="Phone Number" fullWidth />
+                </Grid>
+                <Grid item xs={12}>
                   <MKInput variant="standard" label="Your Message" multiline fullWidth rows={6} />
                 </Grid>
-                <Grid item xs={12} alignItems="center" ml={-1}>
+                {/* <Grid item xs={12} alignItems="center" ml={-1}>
                   <Switch checked={checked} onChange={handleChecked} />
                   <MKTypography
                     variant="button"
@@ -76,12 +80,14 @@ function FormSimple() {
                   >
                     Terms and Conditions
                   </MKTypography>
-                </Grid>
+                </Grid> */}
               </Grid>
               <Grid container item justifyContent="center" xs={12} my={2}>
-                <MKButton type="submit" variant="gradient" color="dark" fullWidth>
-                  Send Message
-                </MKButton>
+                <Link to="/">
+                  <MKButton type="submit" variant="gradient" color="dark" fullWidth>
+                    Send Message
+                  </MKButton>
+                </Link>
               </Grid>
             </MKBox>
           </MKBox>

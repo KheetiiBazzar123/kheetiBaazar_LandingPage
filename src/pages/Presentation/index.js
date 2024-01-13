@@ -43,7 +43,7 @@ function Presentation() {
         routes={routes}
         action={{
           type: "external",
-          route: "#",
+          route: "/pages/landing-pages/contact-us",
           label: "Get In Touch",
           color: "info",
         }}

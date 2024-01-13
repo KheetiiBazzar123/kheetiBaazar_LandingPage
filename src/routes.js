@@ -44,7 +44,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
-import ContactUs from "layouts/pages/landing-pages/contact-us";
+// import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
 
@@ -67,6 +67,7 @@ import Dropdowns from "layouts/sections/elements/dropdowns";
 import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
+import FormSimple from "layouts/sections/input-areas/forms/components/FormSimple";
 
 const routes = [
   {
@@ -86,7 +87,7 @@ const routes = [
           {
             name: "contact us",
             route: "/pages/landing-pages/contact-us",
-            component: <ContactUs />,
+            component: <FormSimple />,
           },
           {
             name: "author",
