@@ -34,8 +34,9 @@ import card1 from "../../assets/imagesWeb/images/cardImages/card1.jpg";
 import card2 from "../../assets/imagesWeb/images/cardImages/card2.jpg";
 import card3 from "../../assets/imagesWeb/images/cardImages/dcard3.jpg";
 import SliderSection from "./sections/SliderSection";
+// import CardImage from "./sections/CardImage";
 function Presentation() {
-  // console.log("routes", routes);
+  console.log("routes", routes);
   return (
     <>
       <DefaultNavbar
@@ -99,6 +100,7 @@ function Presentation() {
         }}
       >
         <Counters />
+
         <Container className="image-container">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
