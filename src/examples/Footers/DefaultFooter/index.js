@@ -30,7 +30,6 @@ import MKTypography from "components/MKTypography";
 import logo from "../../../assets/imagesWeb/images/mainSection/logo.png";
 function DefaultFooter({ content }) {
   const { brand, socials, menus, copyright } = content;
-  console.log("copyright", copyright);
   return (
     <MKBox component="footer">
       <Container>

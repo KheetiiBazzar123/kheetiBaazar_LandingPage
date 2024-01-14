@@ -36,7 +36,6 @@ import card3 from "../../assets/imagesWeb/images/cardImages/dcard3.jpg";
 import SliderSection from "./sections/SliderSection";
 // import CardImage from "./sections/CardImage";
 function Presentation() {
-  // console.log("routes", routes);
   return (
     <>
       <DefaultNavbar
