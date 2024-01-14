@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useEffect } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -40,11 +40,13 @@ export default function App() {
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
+      // console.log("route", route);
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
 
       if (route.route) {
+        console.log("route.route", route.route);
         return <Route exact path={route.route} element={route.component} key={route.key} />;
       }
 
@@ -57,7 +59,7 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
         <Route path="/" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/presentation" />} />
+        {/* <Route path="*" element={<Navigate to="/presentation" />} /> */}
       </Routes>
     </ThemeProvider>
   );
