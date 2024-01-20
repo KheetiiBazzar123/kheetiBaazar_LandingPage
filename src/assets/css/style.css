@@ -54,8 +54,8 @@
 }
 
 .slick-slide img:hover {
-  transform: scale(1.1)!important;
-  transition: transform 0.5s ease-in-out !important;
+  transform: scale(1.05)!important;
+  transition: transform 0.9s ease-in-out !important;
 } 
 .box-border {
   width: 80%;
