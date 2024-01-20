@@ -31,8 +31,8 @@ import footerRoutes from "footer.routes";
 
 // Images
 import card1 from "../../assets/imagesWeb/images/cardImages/card1.jpg";
-import card2 from "../../assets/imagesWeb/images/cardImages/card2.jpg";
-import card3 from "../../assets/imagesWeb/images/cardImages/dcard3.jpg";
+import card2 from "../../assets/imagesWeb/images/cardImages/card2.png";
+import card3 from "../../assets/imagesWeb/images/cardImages/card3.jpg";
 import SliderSection from "./sections/SliderSection";
 // import CardImage from "./sections/CardImage";
 function Presentation() {

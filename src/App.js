@@ -45,7 +45,6 @@ export default function App() {
       }
 
       if (route.route) {
-        console.log("route.route", route.route);
         return <Route exact path={route.route} element={route.component} key={route.key} />;
       }
 

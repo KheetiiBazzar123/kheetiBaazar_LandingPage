@@ -8,7 +8,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import card4 from "../../../assets/imagesWeb/images/cardImages/card4.jpg";
 import card5 from "../../../assets/imagesWeb/images/cardImages/card5.jpg";
-import card6 from "../../../assets/imagesWeb/images/cardImages/card6.png";
+import card6 from "../../../assets/imagesWeb/images/cardImages/card6.jpg";
 
 // Images
 import ServicesComponent from "components/OurServices/services";
