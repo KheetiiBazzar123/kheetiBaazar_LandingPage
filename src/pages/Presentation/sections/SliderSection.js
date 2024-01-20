@@ -54,7 +54,7 @@ const SliderSection = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
