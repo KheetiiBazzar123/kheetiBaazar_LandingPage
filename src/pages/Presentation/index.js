@@ -146,7 +146,7 @@ function Presentation() {
                   href="https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23mui5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-kit-react"
                   target="_blank"
                   color="twitter"
-                  sx={{ mr: 1 }}
+                  sx={{ marginRight: 1 }} // Corrected the property name
                 >
                   <i className="fab fa-twitter" />
                   &nbsp;Tweet
@@ -156,19 +156,29 @@ function Presentation() {
                   href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react"
                   target="_blank"
                   color="facebook"
-                  sx={{ mr: 1 }}
+                  sx={{ marginRight: 1 }} // Corrected the property name
                 >
                   <i className="fab fa-facebook" />
                   &nbsp;Share
                 </MKSocialButton>
                 <MKSocialButton
                   component="a"
-                  href="https://www.instagram.com/your_instagram_username/"
+                  href="https://www.instagram.com/kheetiibazaar?igsh=c3FucW1vYmdycm1q"
                   target="_blank"
                   color="pinterest"
+                  sx={{ marginRight: 1 }}
                 >
                   <i className="fab fa-instagram" />
                   &nbsp;Instagram
+                </MKSocialButton>
+                <MKSocialButton
+                  component="a"
+                  href="https://www.linkedin.com/company/tspk-kheetii-bazaar31-services-private-limited/"
+                  target="_blank"
+                  color="linkedin"
+                >
+                  <i className="fab fa-linkedin" />
+                  &nbsp;LinkedIn
                 </MKSocialButton>
               </Grid>
             </Grid>
