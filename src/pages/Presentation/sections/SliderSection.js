@@ -3,11 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Images
-// import card1 from "../../../assets/imagesWeb/images/cardImages/card1.jpg";
-// import card2 from "../../../assets/imagesWeb/images/cardImages/card2.jpg";
-// import card3 from "../../../assets/imagesWeb/images/cardImages/dcard3.jpg";
-
 const SliderSection = () => {
   const slides = [
     {

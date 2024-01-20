@@ -43,7 +43,7 @@ function Presentation() {
         action={{
           type: "external",
           route: "/pages/landing-pages/contact-us",
-          label: "Get In Touch",
+          label: "Contact Us",
           color: "info",
         }}
         sticky
@@ -163,12 +163,12 @@ function Presentation() {
                 </MKSocialButton>
                 <MKSocialButton
                   component="a"
-                  href="https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/material-kit-react"
+                  href="https://www.instagram.com/your_instagram_username/"
                   target="_blank"
                   color="pinterest"
                 >
-                  <i className="fab fa-pinterest" />
-                  &nbsp;Pin it
+                  <i className="fab fa-instagram" />
+                  &nbsp;Instagram
                 </MKSocialButton>
               </Grid>
             </Grid>

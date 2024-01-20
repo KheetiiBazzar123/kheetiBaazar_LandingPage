@@ -1,12 +1,13 @@
 import React from "react";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import styled from "@emotion/styled";
+import YouTube from "react-youtube";
 
 const WhoWeAreBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
+  alignItems: "flex-start",
   justifyContent: "center",
   padding: theme.spacing(4),
   backgroundColor: theme.palette.background.paper,
@@ -16,8 +17,8 @@ const WhoWeAreBox = styled(Box)(({ theme }) => ({
 
 const VideoContainer = styled("div")({
   position: "relative",
-  width: "100%", // Responsive width
-  paddingBottom: "56.25%", // Aspect ratio for 16:9
+  width: "100%",
+  paddingBottom: "56.25%",
   height: 0,
   overflow: "hidden",
   "& iframe, & video": {
@@ -29,20 +30,16 @@ const VideoContainer = styled("div")({
   },
 });
 
-const PlayButton = styled(IconButton)({
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  zIndex: 1,
-  "&:hover": {
-    color: "#ff0000", // Red color on hover for the play button
-  },
-});
-
 const WhoWeAreComponent = () => {
-  // You can replace this with the actual video URL or path
-  const videoSrc = "/path/to/your/video.mp4";
+  const videoId = "bL6dJjxm0x0";
+
+  const opts = {
+    height: "360",
+    width: "640",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
 
   return (
     <WhoWeAreBox>
@@ -50,20 +47,8 @@ const WhoWeAreComponent = () => {
         WHO WE ARE
       </Typography>
       <VideoContainer>
-        <PlayButton aria-label="play video">
-          <PlayCircleOutlineIcon style={{ fontSize: "4rem" }} />
-        </PlayButton>
-        {/* If you are using a video file */}
-        <video src={videoSrc} controls />
-
-        {/* If you are embedding a video from YouTube or another platform */}
-        {/* <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          title="Video title"
-        ></iframe> */}
+        <PlayCircleOutlineIcon style={{ fontSize: "1rem" }} />
+        <YouTube videoId={videoId} opts={opts} />
       </VideoContainer>
     </WhoWeAreBox>
   );

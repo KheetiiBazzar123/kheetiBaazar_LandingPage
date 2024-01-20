@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Grid, Typography, useTheme, useMediaQuery } from "@mui/material";
 import TransportationIcon from "@mui/icons-material/LocalShipping";
 import SupplyChainIcon from "@mui/icons-material/AccountTree";
-import WarehousingIcon from "@mui/icons-material/Store";
+import BreakfastDiningIcon from "@mui/icons-material/BreakfastDining";
 import styled from "@emotion/styled";
 
 const ServiceBox = styled(Box)(({ theme }) => ({
@@ -30,7 +30,7 @@ const ServiceTitle = styled(Typography)({
 const services = [
   { icon: <TransportationIcon />, title: "TRANSPORTATIONS" },
   { icon: <SupplyChainIcon />, title: "SUPPLY CHAIN" },
-  { icon: <WarehousingIcon />, title: "WAREHOUSING" },
+  { icon: <BreakfastDiningIcon />, title: "Quality Product" },
 ];
 
 const ServicesComponent = () => {
@@ -41,18 +41,19 @@ const ServicesComponent = () => {
     <Box p={2} sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
       <Box flex={1} mr={{ xs: 0, md: 2 }} mb={{ xs: 2, md: 0 }}>
         <Typography variant="h6" component="h3" gutterBottom>
-          SERVICES AND SOLUTIONS CUSTOMIZED FOR YOUR NEEDS
+          SERVICES AND SOLUTIONS CUSTOMIZED FOR YOU
         </Typography>
         <Typography
           variant="body1"
           color="textSecondary"
           gutterBotto
-          sx={{ fontSize: { xs: "14px", md: "16px" } }}
+          sx={{ fontSize: { xs: "14px", md: "14px" } }}
         >
-          Jaipur Golden is a leading provider of specialized service in integrated multi-mode
-          solutions for the transportations of bulk of container cargo. Jaipur Golden provides a
-          single window for businesses that seek seamless transportation, warehousing, supply chain
-          management, and trucking.
+          At Kheetii BaZaar, we are dedicated to revolutionizing the agricultural landscape by
+          eliminating unnecessary intermediaries.Empowering farmers and consumers by cutting out
+          middlemen. We offer fair rates for harvest, efficient transportation, and a streamlined
+          supply chain. Experience quality products at competitive prices, ensuring a direct and
+          transparent exchange. Join us for a sustainable partnership in agriculture.
         </Typography>
       </Box>
 
