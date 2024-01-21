@@ -12,7 +12,7 @@ const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Material Kit 2",
+    name: "Kheetii BaZaar",
     image: logoCT,
     route: "/",
   },
@@ -20,18 +20,7 @@ export default {
   menus: [],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date}{" "}
-      <MKTypography
-        component="a"
-        href="https://www.creative-tim.com"
-        target="_blank"
-        rel="noreferrer"
-        variant="button"
-        fontWeight="regular"
-      >
-        Kheetii BaZaar
-      </MKTypography>
-      .
+      All rights reserved. Copyright &copy; {date} Kheetii BaZaar
     </MKTypography>
   ),
 };
