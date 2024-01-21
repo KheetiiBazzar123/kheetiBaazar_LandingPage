@@ -1,118 +1,227 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// react-router-dom components
-import { Link } from "react-router-dom";
-
-// prop-types is a library for typechecking of props.
+import React from "react";
+import { Box, Link, Typography, Container, Grid, useMediaQuery, useTheme } from "@mui/material";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 import PropTypes from "prop-types";
-
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-
-// Material Kit 2 React components
-import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
-// import { logo } from "../../../../assests/images";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import logo from "../../../assets/imagesWeb/images/mainSection/logo.png";
+
 function DefaultFooter({ content }) {
-  const { brand, socials, menus, copyright } = content;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <MKBox component="footer">
-      <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
-            <MKBox>
-              <Link to={brand.route}>
-                <MKBox component="img" src={logo} alt={brand.name} maxWidth="8rem" mb={2} />
-              </Link>
-              <MKTypography variant="h6">{"Kheetii BaZaar"}</MKTypography>
-            </MKBox>
-            <MKBox display="flex" alignItems="center" mt={3}>
-              {socials.map(({ icon, link }, key) => (
-                <MKTypography
-                  key={link}
-                  component="a"
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant="h5"
-                  color="dark"
-                  opacity={0.8}
-                  mr={key === socials.length - 1 ? 0 : 2.5}
-                >
-                  {icon}
-                </MKTypography>
-              ))}
-            </MKBox>
-          </Grid>
-          {menus.map(({ name: title, items }) => (
-            <Grid key={title} item xs={6} md={2} sx={{ mb: 3 }}>
-              <MKTypography
-                display="block"
-                variant="button"
-                fontWeight="bold"
-                textTransform="capitalize"
-                mb={1}
+    <Box
+      sx={{
+        width: "100%",
+        borderTopLeftRadius: "2rem",
+        borderTopRightRadius: "2rem",
+        paddingBottom: "0.5rem",
+        backgroundColor: "#FCFCFE",
+        "& svg": {
+          width: "1.2rem",
+          height: "1.2rem",
+        },
+      }}
+    >
+      <Box
+        sx={{
+          backgroundColor: "#358FED",
+          padding: "1rem",
+          borderTopLeftRadius: "1rem",
+          borderTopRightRadius: "1rem",
+          width: "100%",
+        }}
+      >
+        <Container maxWidth="lg">
+          <Grid container spacing={isMobile ? 2 : 10}>
+            <Grid
+              item
+              xs={12}
+              md={7}
+              lg={7}
+              sx={{
+                display: "flex",
+                flexDirection: isMobile ? "column" : "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                paddingLeft: isMobile ? 0 : "2rem",
+              }}
+            >
+              <Box
+                sx={{
+                  textAlign: "center",
+                  maxWidth: "30%",
+                  flexShrink: 0,
+                  margin: isMobile ? "0 auto" : "unset",
+                }}
               >
-                {title}
-              </MKTypography>
-              <MKBox component="ul" p={0} m={0} sx={{ listStyle: "none" }}>
-                {items.map(({ name, route, href }) => (
-                  <MKBox key={name} component="li" p={0} m={0} lineHeight={1.25}>
-                    {href ? (
-                      <MKTypography
-                        component="a"
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="button"
-                        fontWeight="regular"
-                        textTransform="capitalize"
-                      >
-                        {name}
-                      </MKTypography>
-                    ) : (
-                      <MKTypography
-                        component={Link}
-                        to={route}
-                        variant="button"
-                        fontWeight="regular"
-                        textTransform="capitalize"
-                      >
-                        {name}
-                      </MKTypography>
-                    )}
-                  </MKBox>
-                ))}
-              </MKBox>
+                <img src={logo} alt="Footer Logo" style={{ maxWidth: "100%", maxHeight: "100%" }} />
+              </Box>
+
+              <Typography
+                variant="body1"
+                color="#fff"
+                sx={{
+                  mt: isMobile ? 2 : 0,
+                  textAlign: isMobile ? "center" : "left",
+                  marginLeft: isMobile ? 0 : "2rem",
+                }}
+              >
+                Transforming Agriculture with Tech. Bridging Farmers and Consumers Directly. Fresher
+                Produce, Fairer Prices. Empowering Farmers, Delighting Consumers. Join Our Journey
+                from Farm to Fork. Revolutionizing the Agri-Market, One Harvest at a Time.
+              </Typography>
             </Grid>
-          ))}
-          <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
-            {copyright}
+
+            <Grid
+              item
+              xs={12}
+              md={5}
+              lg={5}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: isMobile ? "center" : "flex-start",
+                marginTop: isMobile ? 2 : 0,
+                paddingRight: isMobile ? 0 : "2rem",
+              }}
+            >
+              <Typography
+                variant="h6"
+                color="white"
+                gutterBottom
+                sx={{ alignSelf: isMobile ? "center" : "flex-start" }}
+              >
+                <strong>CONTACTS</strong>
+              </Typography>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  color: "#fff",
+                  mb: 1,
+                }}
+              >
+                <LocationOnIcon sx={{ mr: 1, color: "inherit", marginTop: "0.5rem" }} />
+                <Typography variant="body1">
+                  Methopara(N), Milan Pally, PO- Ganganagar
+                  <br />
+                  Dist-North24 Parganas, Barasat-2, <br />
+                  West Bengal, Kolkata- 700132.
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  color: "#f2c426",
+                  mb: 1,
+                }}
+              >
+                <PhoneIcon sx={{ mr: 1, color: "inherit" }} />
+                <Typography variant="body1">+91- 8149405617</Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: "#f2c426",
+                  mb: 1,
+                }}
+              >
+                <EmailIcon sx={{ mr: 1, color: "inherit" }} />
+                <Typography variant="body1">kheetiibazaar@gmail.com</Typography>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </MKBox>
+        </Container>
+      </Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: { xs: "100%", md: "50%" },
+          margin: { xs: "auto", md: "0 auto auto 0" },
+          marginLeft: { xs: 0, md: "auto" },
+          padding: { xs: "1rem", md: 0 },
+        }}
+      >
+        <Typography
+          variant="h6"
+          color="white"
+          gutterBottom
+          sx={{ textAlign: { xs: "center", md: "left" }, mb: { xs: 2, md: 0 } }}
+        >
+          {content.copyright}
+        </Typography>
+
+        <Box
+          display="flex"
+          justifyContent={{ xs: "center", md: "flex-start" }}
+          alignItems="center"
+          color="#3791ED"
+          sx={{
+            gap: "1.2rem",
+            fontSize: "1.2rem",
+            mt: { xs: 2, md: 0 },
+            flexWrap: "wrap", // Ensure that icons wrap on smaller screens
+          }}
+        >
+          <Link
+            href="https://twitter.com/kheetiiBazaar"
+            target="_blank"
+            sx={{ "&:hover": { color: "gray" } }}
+          >
+            <TwitterIcon />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/company/tspk-kheetii-bazaar31-services-private-limited/"
+            target="_blank"
+            sx={{ "&:hover": { color: "gray" } }}
+          >
+            <LinkedInIcon />
+          </Link>
+          <Link
+            href="https://www.facebook.com/profile.php?id=61555872177672&mibextid=ZbWKwL"
+            target="_blank"
+            sx={{ "&:hover": { color: "gray" } }}
+          >
+            <FacebookIcon />
+          </Link>
+          <Link
+            href="https://www.instagram.com/kheetiibazaar?igsh=c3FucW1vYmdycm1q"
+            target="_blank"
+            sx={{ "&:hover": { color: "gray" } }}
+          >
+            <InstagramIcon />
+          </Link>
+          <Link
+            href="https://youtube.com/@kheetiiBazaar?si=-ZZMLbE-s89OhsPZ"
+            target="_blank"
+            sx={{ "&:hover": { color: "gray" } }}
+          >
+            <YouTubeIcon />
+          </Link>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 
-// Typechecking props for the DefaultFooter
 DefaultFooter.propTypes = {
-  content: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object, PropTypes.array])).isRequired,
+  content: PropTypes.object.isRequired,
 };
 
 export default DefaultFooter;

@@ -20,7 +20,18 @@ export default {
   menus: [],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} Kheetii BaZaar
+      All rights reserved. Copyright &copy; {date}{" "}
+      <MKTypography
+        component="a"
+        href="https://www.creative-tim.com"
+        target="_blank"
+        rel="noreferrer"
+        variant="button"
+        fontWeight="regular"
+      >
+        Kheetii BaZaar
+      </MKTypography>
+      .
     </MKTypography>
   ),
 };

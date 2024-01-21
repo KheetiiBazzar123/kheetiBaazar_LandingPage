@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import heroImage from "../../assets/imagesWeb/images/mainSection/HeroImage.jpg";
+// import heroImage from "../../assets/imagesWeb/images/mainSection/heroImage2.jpg";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -143,7 +144,7 @@ function Presentation() {
               >
                 <MKSocialButton
                   component="a"
-                  href="https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23mui5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-kit-react"
+                  href="https://twitter.com/kheetiiBazaar"
                   target="_blank"
                   color="twitter"
                   sx={{ marginRight: 1 }} // Corrected the property name
@@ -153,7 +154,7 @@ function Presentation() {
                 </MKSocialButton>
                 <MKSocialButton
                   component="a"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react"
+                  href="https://www.facebook.com/profile.php?id=61555872177672&mibextid=ZbWKwL"
                   target="_blank"
                   color="facebook"
                   sx={{ marginRight: 1 }} // Corrected the property name
