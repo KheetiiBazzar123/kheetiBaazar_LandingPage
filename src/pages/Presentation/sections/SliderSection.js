@@ -69,10 +69,10 @@ const SliderSection = () => {
     draggable: true,
   };
   return (
-    <div className="my-7 mx-4 box-border">
+    <div className="my-7 mx-4">
       <Slider {...settings} className="rounded-lg">
         {slides.map((slide, index) => (
-          <div key={index} className="w-70% md:w-1/2 lg:w-1/3 xl:w-1/4 inline-block rounded-e-xl">
+          <div key={index} className="w-80% md:w-1/2 lg:w-1/3 xl:w-1/4 inline-block rounded-e-xl">
             {/* <a
               href={slide.link}
               rel="noopener noreferrer"

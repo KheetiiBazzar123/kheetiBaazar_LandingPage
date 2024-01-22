@@ -9,9 +9,8 @@ const WhoWeAreBox = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
-  padding: theme.spacing(4),
+  padding: theme.spacing(1),
   backgroundColor: theme.palette.background.paper,
-  boxShadow: theme.shadows[1],
   borderRadius: theme.shape.borderRadius,
 }));
 
@@ -43,10 +42,10 @@ const WhoWeAreComponent = () => {
 
   return (
     <WhoWeAreBox>
-      <Typography variant="h6" component="h3" gutterBottom>
+      <Typography variant="h6" component="h4" gutterBottom>
         WHO WE ARE
       </Typography>
-      <VideoContainer>
+      <VideoContainer style={{ marginTop: "1rem", borderRadius: "1rem" }}>
         <PlayCircleOutlineIcon style={{ fontSize: "1rem" }} />
         <YouTube videoId={videoId} opts={opts} />
       </VideoContainer>

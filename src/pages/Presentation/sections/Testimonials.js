@@ -60,6 +60,7 @@ function Information() {
         <ServicesComponent />
         <Divider sx={{ my: 3 }} />
         <WhoWeAreComponent />
+        <Divider sx={{ my: 3 }} />
       </Container>
     </MKBox>
   );

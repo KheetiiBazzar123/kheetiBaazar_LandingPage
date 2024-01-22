@@ -121,7 +121,9 @@ function Presentation() {
           </Grid>
         </Container>
         <Testimonials />
-        <SliderSection />
+        <Container>
+          <SliderSection />
+        </Container>
         {/* <Download /> */}
         <MKBox pt={18} pb={6}>
           <Container className="image-container">
