@@ -3,54 +3,46 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import image1 from "../../../assets/imagesWeb/images/autoScrollImage/ImgAutoScroll1.jpg";
+import image2 from "../../../assets/imagesWeb/images/autoScrollImage/ImageAutoScroll2.jpg";
+import image3 from "../../../assets/imagesWeb/images/autoScrollImage/ImageAutoScroll3.jpg";
+import image4 from "../../../assets/imagesWeb/images/autoScrollImage/ImageAutoScroll4.avif";
+import image5 from "../../../assets/imagesWeb/images/autoScrollImage/ImageAutoScroll5.png";
+import image6 from "../../../assets/imagesWeb/images/autoScrollImage/d57d25cb8c6fdd2163c677f9fb6d0275.gif";
+
 const SliderSection = () => {
   const slides = [
     {
       link: "https://indieweb.social/@kendalmintcode",
-      imageUrl:
-        "https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imageUrl: image1,
     },
     {
       link: "https://k-tech.systems",
-      imageUrl:
-        "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=600",
+      imageUrl: image2,
     },
     {
       link: "https://indieweb.social/@kendalmintcode",
-      imageUrl:
-        "https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imageUrl: image3,
     },
-    {
-      link: "https://indieweb.social/@kendalmintcode",
-      imageUrl:
-        "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=600",
-    },
-    {
-      link: "https://indieweb.social/@kendalmintcode",
-      imageUrl:
-        "https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&w=600",
-    },
+
     {
       link: "https://k-tech.systems",
-      imageUrl:
-        "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=600",
+      imageUrl: image6,
     },
     {
       link: "https://indieweb.social/@kendalmintcode",
-      imageUrl:
-        "https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imageUrl: image4,
     },
     {
       link: "https://indieweb.social/@kendalmintcode",
-      imageUrl:
-        "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=600",
+      imageUrl: image5,
     },
   ];
   const settings = {
     dots: true,
     infinite: true,
     speed: 3000,
-    slidesToShow: 3,
+    slidesToShow: 6,
     slidesToScroll: 1,
     responsive: [
       {
@@ -81,17 +73,17 @@ const SliderSection = () => {
       <Slider {...settings} className="rounded-lg">
         {slides.map((slide, index) => (
           <div key={index} className="w-80% md:w-1/2 lg:w-1/3 xl:w-1/4 inline-block rounded-e-xl">
-            <a
+            {/* <a
               href={slide.link}
               rel="noopener noreferrer"
               className="block w-80% h-64 focus:outline-none focus:ring focus:border-blue-300"
-            >
-              <img
-                src={slide.imageUrl}
-                alt={slide.link}
-                className="w-auto h-auto object-cover rounded-xl transition-transform transform scale-100 hover:scale-105 mx-2 p-2"
-              />
-            </a>
+            > */}
+            <img
+              src={slide.imageUrl}
+              alt={slide.link}
+              className="w-auto h-auto object-cover-fill rounded-xl transition-transform transform scale-100 hover:scale-105 mx-2 p-2"
+            />
+            {/* </a> */}
           </div>
         ))}
       </Slider>
