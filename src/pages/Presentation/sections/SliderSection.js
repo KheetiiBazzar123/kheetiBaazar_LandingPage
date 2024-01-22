@@ -42,7 +42,7 @@ const SliderSection = () => {
     dots: true,
     infinite: true,
     speed: 3000,
-    slidesToShow: 6,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
       {
@@ -72,17 +72,13 @@ const SliderSection = () => {
     <div className="my-7 mx-4 box-border">
       <Slider {...settings} className="rounded-lg">
         {slides.map((slide, index) => (
-          <div key={index} className="w-80% md:w-1/2 lg:w-1/3 xl:w-1/4 inline-block rounded-e-xl">
+          <div key={index} className="w-70% md:w-1/2 lg:w-1/3 xl:w-1/4 inline-block rounded-e-xl">
             {/* <a
               href={slide.link}
               rel="noopener noreferrer"
               className="block w-80% h-64 focus:outline-none focus:ring focus:border-blue-300"
             > */}
-            <img
-              src={slide.imageUrl}
-              alt={slide.link}
-              className="w-auto h-auto object-cover-fill rounded-xl transition-transform transform scale-100 hover:scale-105 mx-2 p-2"
-            />
+            <img src={slide.imageUrl} alt={slide.link} className="slider-image" />
             {/* </a> */}
           </div>
         ))}
