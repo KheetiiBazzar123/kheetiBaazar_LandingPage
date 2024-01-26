@@ -30,7 +30,7 @@ const VideoContainer = styled("div")({
 });
 
 const WhoWeAreComponent = () => {
-  const videoId = "bL6dJjxm0x0";
+  const videoId = "dobUSzv7xPA";
 
   const opts = {
     height: "360",
