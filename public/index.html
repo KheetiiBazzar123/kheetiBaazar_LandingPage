@@ -63,5 +63,14 @@
     <div id="root"></div>
     <!-- we need to use this for better security  -->
     <!-- <a href="https://www.kheetiibazaar.com/" target="_blank" rel="noopener noreferrer">Example</a> -->
+    <script>
+      (function () {
+        var url = window.location.href;
+        if (url.indexOf("?m=1") !== -1) {
+          url = url.replace("?m=1", "");
+          window.history.pushState(null, null, url);
+        }
+      })();
+    </script>
   </body>
 </html>
