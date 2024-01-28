@@ -41,12 +41,12 @@ function Presentation() {
     <>
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "external",
-          route: "/pages/landing-pages/contact-us",
-          label: "Contact Us",
-          color: "info",
-        }}
+        // action={{
+        //   type: "external",
+        //   route: "/pages/landing-pages/contact-us",
+        //   label: "Contact Us",
+        //   color: "info",
+        // }}
         sticky
       />
       <MKBox
