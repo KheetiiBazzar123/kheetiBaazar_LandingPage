@@ -49,7 +49,7 @@ const ServicesComponent = () => {
           gutterBotto
           sx={{ fontSize: { xs: "14px", md: "14px" } }}
         >
-          At Kheetii BaZaar, we are dedicated to revolutionizing the agricultural landscape by
+          At Kheetii Bazaar, we are dedicated to revolutionizing the agricultural landscape by
           eliminating unnecessary intermediaries.Empowering farmers and consumers by cutting out
           middlemen. We offer fair rates for harvest, efficient transportation, and a streamlined
           supply chain. Experience quality products at competitive prices, ensuring a direct and

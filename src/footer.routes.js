@@ -12,7 +12,7 @@ const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Kheetii BaZaar",
+    name: "Kheetii Bazaar",
     image: logoCT,
     route: "/",
   },
@@ -29,7 +29,7 @@ export default {
         variant="button"
         fontWeight="regular"
       >
-        Kheetii BaZaar
+        Kheetii Bazaar
       </MKTypography>
       .
     </MKTypography>
