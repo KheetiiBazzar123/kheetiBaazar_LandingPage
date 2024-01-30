@@ -27,7 +27,7 @@ import ContactModal from "./modal";
 
 import breakpoints from "assets/theme/base/breakpoints";
 // modal
-import Button from "@mui/material/Button";
+
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   // const [dropdown, setDropdown] = useState("");
   // const [dropdownEl, setDropdownEl] = useState("");
@@ -475,7 +475,18 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
               ml="auto"
               mr={center ? "auto" : 0}
             >
+              {console.log("renderNavbarItems", renderNavbarItems === "Contact Us")}
               {renderNavbarItems}
+            </MKBox>
+            <MKBox
+              display={{ xs: "none", lg: "flex" }}
+              // ml="auto"
+              mr={center ? "auto" : 0}
+              style={{ color: "#344767", opacity: "0.6", fontSize: "1rem" }}
+              onClick={handleOpen}
+            >
+              {console.log("renderNavbarItems", renderNavbarItems === "Contact Us")}
+              Contact Us
             </MKBox>
             <MKBox ml={{ xs: "auto", lg: 0 }}>
               {action &&
@@ -523,13 +534,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
               <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
             </MKBox>
             <div>
-              <Button
-                style={{ backgroundColor: "#6750A4", color: "#fff" }}
-                variant="contained"
-                onClick={handleOpen}
-              >
-                Contact Us
-              </Button>
               <ContactModal open={open} handleClose={handleClose} />
             </div>
           </MKBox>
