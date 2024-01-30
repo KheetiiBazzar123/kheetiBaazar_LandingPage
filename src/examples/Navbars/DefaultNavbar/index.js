@@ -1,21 +1,5 @@
-/* eslint-disable no-param-reassign */
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 import React from "react";
 import { useState, useEffect } from "react";
-import { MdOutlineCancel } from "react-icons/md";
 // react-router components
 import { Link } from "react-router-dom";
 
@@ -39,45 +23,11 @@ import MKButton from "components/MKButton";
 // Material Kit 2 React example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
+import ContactModal from "./modal";
 
-// Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 // modal
-import Box from "@mui/material/Box";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
-
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-
-const useStyles = () => ({
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginTop: 3,
-  },
-  textField: {
-    width: "100%",
-    marginBottom: 2,
-  },
-  button: {
-    width: "50%",
-    marginTop: 2,
-  },
-});
-import Modal from "@mui/material/Modal";
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   // const [dropdown, setDropdown] = useState("");
   // const [dropdownEl, setDropdownEl] = useState("");
@@ -86,7 +36,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   // const [nestedDropdownEl, setNestedDropdownEl] = useState("");
   // const [nestedDropdownName, setNestedDropdownName] = useState("");
   // const [arrowRef, setArrowRef] = useState(null);
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -573,7 +522,16 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             >
               <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
             </MKBox>
-            <MKBox onClick={handleOpen}>Contact Us</MKBox>
+            <div>
+              <Button
+                style={{ backgroundColor: "#6750A4", color: "#fff" }}
+                variant="contained"
+                onClick={handleOpen}
+              >
+                Contact Us
+              </Button>
+              <ContactModal open={open} handleClose={handleClose} />
+            </div>
           </MKBox>
           <MKBox
             bgColor={transparent ? "white" : "transparent"}
@@ -586,47 +544,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
         </MKBox>
       </Container>
       {/* start modal */}
-      <div>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <MdOutlineCancel onChange={handleClose} style={{ float: "right" }} />
-            <Container maxWidth="sm">
-              <form className={classes.form}>
-                <TextField className={classes.textField} label="Name" variant="outlined" required />
-                <TextField
-                  className={classes.textField}
-                  label="Phone Number"
-                  variant="outlined"
-                  type="number"
-                  required
-                />
-                <TextField
-                  className={classes.textField}
-                  label="Message"
-                  variant="outlined"
-                  multiline
-                  rows={4}
-                  required
-                />
-
-                <Button
-                  className={classes.button}
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                >
-                  Submit
-                </Button>
-              </form>
-            </Container>
-          </Box>
-        </Modal>
-      </div>
+      <modalComponent open={open} />
     </>
   );
 }
