@@ -4,47 +4,81 @@ import {
   Box,
   Typography,
   TextField,
-  Checkbox,
+  RadioGroup,
+  Radio,
   FormControlLabel,
   Button,
 } from "@mui/material";
 import PropTypes from "prop-types";
-// spreadsheetId
-// 1Eo3rgmy10jKsZXQi9N83zQSJ8XmNt8940rB05p455VE
-// https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0
+
 function ContactModal({ open, handleClose }) {
   const [formData, setFormData] = useState({
     name: "",
     mobileNumber: "",
     email: "",
-    isFarmer: false,
-    isConsumerVendor: false,
+    selection: "",
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (event) => {
-    const { name, value, checked, type } = event.target;
+    const { name, value } = event.target;
+    if (name === "mobileNumber" && !/^[0-9]*$/.test(value)) return;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: value,
     }));
+  };
+
+  const validate = () => {
+    let tempErrors = {};
+    tempErrors.name =
+      /^[a-zA-Z ]+$/.test(formData.name) || formData.name === ""
+        ? ""
+        : "Only characters are allowed.";
+    tempErrors.mobileNumber = /^[0-9]*$/.test(formData.mobileNumber)
+      ? ""
+      : "Only numbers are allowed.";
+    tempErrors.email =
+      /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(formData.email) ||
+      formData.email === ""
+        ? ""
+        : "Email is not valid.";
+    // tempErrors.selection = formData.selection ? "" : "This field is required.";
+    // tempErrors.message = formData.message ? "" : "This field is required.";
+
+    setErrors(tempErrors);
+    return Object.values(tempErrors).every((x) => x === "");
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!validate()) return;
+
+    const dataToSend = {
+      ...formData,
+      user_type: formData.selection === "isFarmer" ? "Farmer" : "Consumer/Vendor",
+    };
+
     try {
-      const url = "https://sheetdb.io/api/v1/stmc2ym9veha5";
+      const url = "https://sheet.best/api/sheets/fc9acac8-bbcf-449d-9dda-ad477776bd62";
       const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        // Wrap formData in an array
-        body: JSON.stringify([formData]),
+        body: JSON.stringify([dataToSend]),
       });
 
       if (response.ok) {
-        console.log("Data successfully saved to Google Sheet");
+        setFormData({
+          name: "",
+          mobileNumber: "",
+          email: "",
+          selection: "",
+          message: "",
+        });
         handleClose();
       } else {
         console.error("Error saving data: ", response.status, response.statusText);
@@ -80,6 +114,9 @@ function ContactModal({ open, handleClose }) {
             variant="outlined"
             value={formData.name}
             onChange={handleChange}
+            error={!!errors.name}
+            helperText={errors.name}
+            required
           />
           <TextField
             fullWidth
@@ -89,6 +126,9 @@ function ContactModal({ open, handleClose }) {
             variant="outlined"
             value={formData.mobileNumber}
             onChange={handleChange}
+            error={!!errors.mobileNumber}
+            helperText={errors.mobileNumber}
+            required
           />
           <TextField
             fullWidth
@@ -98,23 +138,17 @@ function ContactModal({ open, handleClose }) {
             variant="outlined"
             value={formData.email}
             onChange={handleChange}
+            error={!!errors.email}
+            helperText={errors.email}
           />
-          <FormControlLabel
-            control={
-              <Checkbox checked={formData.isFarmer} onChange={handleChange} name="isFarmer" />
-            }
-            label="Farmer"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={formData.isConsumerVendor}
-                onChange={handleChange}
-                name="isConsumerVendor"
-              />
-            }
-            label="Consumer/Vendor"
-          />
+          <RadioGroup name="selection" value={formData.selection} onChange={handleChange}>
+            <FormControlLabel value="isFarmer" control={<Radio />} label="Farmer" />
+            <FormControlLabel
+              value="isConsumerVendor"
+              control={<Radio />}
+              label="Consumer/Vendor"
+            />
+          </RadioGroup>
           <TextField
             fullWidth
             margin="normal"
@@ -125,6 +159,8 @@ function ContactModal({ open, handleClose }) {
             variant="outlined"
             value={formData.message}
             onChange={handleChange}
+            error={!!errors.message}
+            helperText={errors.message}
           />
           <Button
             type="submit"
