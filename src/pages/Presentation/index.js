@@ -11,7 +11,6 @@ import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 // import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
@@ -27,7 +26,6 @@ import Testimonials from "pages/Presentation/sections/Testimonials";
 // import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 
 // Routes
-import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Images
@@ -39,16 +37,6 @@ import SliderSection from "./sections/SliderSection";
 function Presentation() {
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        // action={{
-        //   type: "external",
-        //   route: "/pages/landing-pages/contact-us",
-        //   label: "Contact Us",
-        //   color: "info",
-        // }}
-        sticky
-      />
       <MKBox
         minHeight="75vh"
         width="100%"

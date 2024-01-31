@@ -20,7 +20,6 @@ import Card from "@mui/material/Card";
 import MKBox from "components/MKBox";
 
 // Material Kit 2 React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Author page sections
 import Profile from "pages/LandingPages/Author/sections/Profile";
@@ -37,17 +36,7 @@ import bgImage from "assets/images/city-profile.jpg";
 function Author() {
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
-          color: "info",
-        }}
-        transparent
-        light
-      />
+      
       <MKBox bgColor="white">
         <MKBox
           minHeight="25rem"

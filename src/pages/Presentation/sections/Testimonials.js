@@ -37,7 +37,7 @@ function Information() {
             expertise and support extend beyond transactions.
           </MKTypography>
         </Grid>
-        <Container className="image-container">
+        <Container sx={{ width: "100%" }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
               <Card className="card-container">
