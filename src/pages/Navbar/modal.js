@@ -117,6 +117,8 @@ function ContactModal({ open, handleClose }) {
           bgcolor: "background.paper",
           boxShadow: 24,
           p: 4,
+          maxHeight: "90vh", // 90% of the viewport height
+          overflowY: "auto",
         }}
       >
         <Typography variant="h6" component="h2">
