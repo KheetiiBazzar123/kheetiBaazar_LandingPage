@@ -1,3 +1,7 @@
+
+html {
+  scroll-behavior: smooth;
+}
 .cardImage {
   width: 30vw;
   height: 40vh;

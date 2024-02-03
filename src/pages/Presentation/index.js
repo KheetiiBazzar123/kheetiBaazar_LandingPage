@@ -48,6 +48,7 @@ function Presentation() {
       <MKBox
         minHeight="75vh"
         width="100%"
+        id="home"
         sx={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: "cover",
@@ -97,7 +98,7 @@ function Presentation() {
       >
         <Counters />
 
-        <Container sx={{ width: "100%" }}>
+        <Container sx={{ width: "100%" }} id="gallery">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
               <Card className="card-container">
@@ -138,12 +139,12 @@ function Presentation() {
         </Container>
         <Divider sx={{ my: 6 }} />
 
-        <Container>
+        <Container id="services">
           <ServicesComponent />
         </Container>
         <Divider sx={{ my: 6 }} />
 
-        <Container sx={{ width: "100%" }}>
+        <Container sx={{ width: "100%" }} id="about">
           <WhoWeAreComponent />
         </Container>
         <Divider sx={{ my: 6 }} />

@@ -10,6 +10,7 @@ import styled from "@emotion/styled";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ContactModal from "./modal";
+import { useNavigate } from "react-router-dom";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   position: "fixed",
@@ -136,6 +137,20 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const navigate = useNavigate();
+
+  const handleNavigation = (sectionId) => {
+    const section = document.querySelector(sectionId);
+    const navbarHeight = 120;
+
+    if (section) {
+      const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
+
+    navigate(".", { replace: true });
+  };
+
   return (
     <>
       <StyledAppBar>
@@ -149,16 +164,10 @@ const Navbar = () => {
             Kheeti Bazaar
           </StyledTypography>
           <DesktopMenu>
-            <DesktopMenuItem component="a" href="">
-              Home
-            </DesktopMenuItem>
-            <DesktopMenuItem component="a" href="">
-              Gallery
-            </DesktopMenuItem>
-            <DesktopMenuItem component="a" href="">
-              About
-            </DesktopMenuItem>
-            <DesktopMenuItem component="a" href="">
+            <DesktopMenuItem onClick={() => handleNavigation("#home")}>Home</DesktopMenuItem>
+            <DesktopMenuItem onClick={() => handleNavigation("#gallery")}>Gallery</DesktopMenuItem>
+            <DesktopMenuItem onClick={() => handleNavigation("#about")}>About</DesktopMenuItem>
+            <DesktopMenuItem onClick={() => handleNavigation("#services")}>
               Services
             </DesktopMenuItem>
             <DesktopMenuItem component="a" onClick={handleOpen}>
@@ -174,16 +183,16 @@ const Navbar = () => {
         onClose={handleDrawerToggle}
       >
         <DrawerListContainer className={mobileMenuOpen ? "enter" : ""}>
-          <DrawerItem>
+          <DrawerItem onClick={() => handleNavigation("#home")}>
             <Typography>Home</Typography>
           </DrawerItem>
-          <DrawerItem>
+          <DrawerItem onClick={() => handleNavigation("#gallery")}>
             <Typography>Gallery</Typography>
           </DrawerItem>
-          <DrawerItem>
+          <DrawerItem onClick={() => handleNavigation("#about")}>
             <Typography>About</Typography>
           </DrawerItem>
-          <DrawerItem>
+          <DrawerItem onClick={() => handleNavigation("#services")}>
             <Typography>Services</Typography>
           </DrawerItem>
           <DrawerItem>
