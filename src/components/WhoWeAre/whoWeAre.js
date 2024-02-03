@@ -9,7 +9,6 @@ const WhoWeAreBox = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
-  padding: theme.spacing(1),
   backgroundColor: theme.palette.background.paper,
   borderRadius: theme.shape.borderRadius,
 }));
@@ -17,7 +16,7 @@ const WhoWeAreBox = styled(Box)(({ theme }) => ({
 const VideoContainer = styled("div")({
   position: "relative",
   width: "100%",
-  paddingBottom: "56.25%",
+  paddingBottom: "56%",
   height: 0,
   overflow: "hidden",
   "& iframe, & video": {

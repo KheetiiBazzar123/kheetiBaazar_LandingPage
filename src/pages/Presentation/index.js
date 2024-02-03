@@ -9,6 +9,7 @@ import heroImage from "../../assets/imagesWeb/images/mainSection/HeroImage.jpg";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
+import Divider from "@mui/material/Divider";
 
 // Material Kit 2 React examples
 import DefaultFooter from "examples/Footers/DefaultFooter";
@@ -20,6 +21,10 @@ import Counters from "pages/Presentation/sections/Counters";
 // import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
 // import Pages from "pages/Presentation/sections/Pages";
 import Testimonials from "pages/Presentation/sections/Testimonials";
+
+// Images
+import ServicesComponent from "components/OurServices/services";
+import WhoWeAreComponent from "components/WhoWeAre/whoWeAre";
 // import Download from "pages/Presentation/sections/Download";
 
 // Presentation page components
@@ -32,6 +37,9 @@ import footerRoutes from "footer.routes";
 import card1 from "../../assets/imagesWeb/images/cardImages/card1.jpg";
 import card2 from "../../assets/imagesWeb/images/cardImages/card2.png";
 import card3 from "../../assets/imagesWeb/images/cardImages/card3.jpg";
+import card4 from "../../assets/imagesWeb/images/cardImages/card4.jpg";
+import card5 from "../../assets/imagesWeb/images/cardImages/card5.jpg";
+import card6 from "../../assets/imagesWeb/images/cardImages/card6.jpg";
 import SliderSection from "./sections/SliderSection";
 // import CardImage from "./sections/CardImage";
 function Presentation() {
@@ -89,7 +97,7 @@ function Presentation() {
       >
         <Counters />
 
-        <Container className="image-container">
+        <Container sx={{ width: "100%" }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
               <Card className="card-container">
@@ -109,11 +117,42 @@ function Presentation() {
           </Grid>
         </Container>
         <Testimonials />
+        <Container sx={{ width: "100%" }}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
+              <Card className="card-container">
+                <CardMedia component="img" image={card4} alt="card" className="cardImage" />
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
+              <Card className="card-container">
+                <CardMedia component="img" image={card5} alt="card" className="cardImage" />
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
+              <Card className="card-container">
+                <CardMedia component="img" image={card6} alt="card" className="cardImage" />
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+        <Divider sx={{ my: 6 }} />
+
+        <Container>
+          <ServicesComponent />
+        </Container>
+        <Divider sx={{ my: 6 }} />
+
+        <Container sx={{ width: "100%" }}>
+          <WhoWeAreComponent />
+        </Container>
+        <Divider sx={{ my: 6 }} />
+
         <Container>
           <SliderSection />
         </Container>
         {/* <Download /> */}
-        <MKBox pt={18} pb={6}>
+        <MKBox pt={12} pb={6}>
           <Container className="image-container">
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>

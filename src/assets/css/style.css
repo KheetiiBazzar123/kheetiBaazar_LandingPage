@@ -12,11 +12,13 @@
   background-color: #fff !important;
   border-radius: 8px 8px 8px 8px !important;
   box-shadow: 0rem 0.25rem 0.375rem -0.0625rem #7d9db9, 0rem 0.125rem 0.25rem -0.0625rem #6d8eb9 !important;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .card-container:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 1.5s ease, box-shadow 1.5s ease; /* Slow-motion effect on hover */
 }
 .service-card-container {
   display: flex;

@@ -38,7 +38,7 @@ const ServicesComponent = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box p={2} sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
+    <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
       <Box flex={1} mr={{ xs: 0, md: 2 }} mb={{ xs: 2, md: 0 }}>
         <Typography variant="h6" component="h3" gutterBottom>
           SERVICES AND SOLUTIONS CUSTOMIZED FOR YOU
