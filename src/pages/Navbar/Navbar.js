@@ -57,9 +57,9 @@ const DesktopMenuItem = styled(Typography)({
     textDecoration: "none",
   },
   "&:not(:last-of-type)": {
-    marginRight: "2px", // Adjust right margin for all except the last item
+    marginRight: "2px",
   },
-  cursor: "pointer", // To indicate clickable items
+  cursor: "pointer",
 });
 
 const MenuButton = styled(IconButton)(({ theme }) => ({
@@ -71,19 +71,19 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
 
 const DrawerItem = styled("div")(({ theme }) => ({
   padding: theme.spacing(1),
-  textAlign: "center", // Center the text
+  textAlign: "center",
   "&:hover": {
-    backgroundColor: "#e0e0e0", // Light grey background on hover
+    backgroundColor: "#e0e0e0",
   },
 }));
 
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   ".MuiDrawer-paper": {
     position: "absolute",
-    top: "64px", // Adjust this value based on your AppBar's height
+    top: "64px",
     left: 0,
     right: 0,
-    width: "auto", // This makes the width match the AppBar
+    width: "auto",
     borderRadius: "0 0 8px 8px",
     transition: theme.transitions.create("top", {
       easing: theme.transitions.easing.sharp,
@@ -98,8 +98,8 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
 const DrawerListContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  backgroundColor: "#fff", // White background for the list container
-  boxShadow: "0 2px 8px rgba(0,0,0,0.15)", // A subtle shadow
+  backgroundColor: "#fff",
+  boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
   opacity: 0,
   transform: "translateY(-20px)",
   transition: theme.transitions.create(["opacity", "transform"], {

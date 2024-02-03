@@ -189,7 +189,7 @@ function Presentation() {
                   sx={{ marginRight: 1 }} // Corrected the property name
                 >
                   <i className="fab fa-facebook" />
-                  &nbsp;Share
+                  &nbsp;Facebook
                 </MKSocialButton>
                 <MKSocialButton
                   component="a"
