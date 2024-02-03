@@ -27,7 +27,6 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "center",
-  padding: "0 2%",
 });
 
 const StyledTypography = styled(Typography)({
@@ -44,20 +43,20 @@ const DesktopMenu = styled("div")(({ theme }) => ({
 }));
 
 const DesktopMenuItem = styled(Typography)({
-  margin: "0 8px",
+  margin: "5px 8px",
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  fontSize: "0.875rem",
-  fontWeight: 400,
+  fontSize: "1rem",
+  fontWeight: 500,
   lineHeight: 1.5,
   textTransform: "capitalize",
-  letterSpacing: "-0.125px",
+  letterSpacing: "-0.05px",
   textDecoration: "none",
   color: "#344767",
   "&:hover": {
     textDecoration: "none",
   },
   "&:not(:last-of-type)": {
-    marginRight: "2px",
+    marginRight: "15px",
   },
   cursor: "pointer",
 });
@@ -70,45 +69,58 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
 }));
 
 const DrawerItem = styled("div")(({ theme }) => ({
-  padding: theme.spacing(1),
-  textAlign: "center",
+  padding: theme.spacing(1.1),
+  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  textAlign: "left",
+  fontSize: "0.875rem",
+  marginLeft: "15px",
+  cursor: "pointer",
   "&:hover": {
-    backgroundColor: "#e0e0e0",
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
   },
 }));
 
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   ".MuiDrawer-paper": {
-    position: "absolute",
-    top: "64px",
+    top: "68px",
+    position: "fixed",
     left: 0,
     right: 0,
     width: "auto",
-    borderRadius: "0 0 8px 8px",
-    transition: theme.transitions.create("top", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
+    borderRadius: 8,
     backgroundColor: "transparent",
     boxShadow: "none",
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontSize: "0.875rem",
     overflow: "visible",
+    transform: "translateY(-100%)",
+    transition: theme.transitions.create("transform", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  "&.MuiDrawer-open .MuiDrawer-paper": {
+    transform: "translateY(0)",
   },
 }));
 
 const DrawerListContainer = styled(Box)(({ theme }) => ({
   display: "flex",
+  justifyContent: "center",
   flexDirection: "column",
-  backgroundColor: "#fff",
-  boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+  backgroundColor: "rgba(255, 255, 255, 0.7)",
+  backdropFilter: "blur(10px)",
+  boxShadow: "none",
+  borderRadius: "0 0 8px 8px",
   opacity: 0,
-  transform: "translateY(-20px)",
   transition: theme.transitions.create(["opacity", "transform"], {
     easing: theme.transitions.easing.easeOut,
     duration: theme.transitions.duration.enteringScreen,
   }),
+  width: "67%",
   "&.enter": {
     opacity: 1,
-    transform: "translateY(0)",
+    transform: "translateX(24.7%)",
   },
 }));
 

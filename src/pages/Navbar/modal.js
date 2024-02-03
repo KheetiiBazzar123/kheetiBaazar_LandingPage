@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "../../assets/css/style.css";
+
 import {
   Modal,
   Box,
@@ -18,6 +21,10 @@ function ContactModal({ open, handleClose }) {
     email: "",
     selection: "",
     message: "",
+    city: "",
+    state: "",
+    Landmark: "",
+    address: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -78,10 +85,20 @@ function ContactModal({ open, handleClose }) {
           email: "",
           selection: "",
           message: "",
+          city: "",
+          state: "",
+          landmark: "",
+          address: "",
         });
+        toast.success("Data Saved Successfully!!!", {
+          classNames: "toast-message-success",
+        });
+
         handleClose();
       } else {
-        console.error("Error saving data: ", response.status, response.statusText);
+        toast.error("Error In Saving Data", {
+          className: "toast-message-error",
+        });
       }
     } catch (error) {
       console.error("Error: ", error);
@@ -140,6 +157,42 @@ function ContactModal({ open, handleClose }) {
             onChange={handleChange}
             error={!!errors.email}
             helperText={errors.email}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            name="city"
+            label="City"
+            variant="outlined"
+            value={formData.city}
+            onChange={handleChange}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            name="state"
+            label="State"
+            variant="outlined"
+            value={formData.state}
+            onChange={handleChange}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            name="landmark"
+            label="Landmark"
+            variant="outlined"
+            value={formData.landmark}
+            onChange={handleChange}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            name="address"
+            label="Address"
+            variant="outlined"
+            value={formData.address}
+            onChange={handleChange}
           />
           <RadioGroup name="selection" value={formData.selection} onChange={handleChange}>
             <FormControlLabel value="isFarmer" control={<Radio />} label="Farmer" />
