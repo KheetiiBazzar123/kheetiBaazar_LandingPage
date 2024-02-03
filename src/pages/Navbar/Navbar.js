@@ -129,9 +129,12 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setMobileMenuOpen(false);
+    setOpen(false);
+  };
 
   const handleDrawerToggle = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -147,7 +150,7 @@ const Navbar = () => {
       const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
     }
-
+    setMobileMenuOpen(false);
     navigate(".", { replace: true });
   };
 
