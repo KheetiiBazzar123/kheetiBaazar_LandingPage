@@ -173,7 +173,23 @@ const Navbar = () => {
             <DesktopMenuItem onClick={() => handleNavigation("#services")}>
               Services
             </DesktopMenuItem>
-            <DesktopMenuItem component="a" onClick={handleOpen}>
+            <DesktopMenuItem
+              component="a"
+              onClick={handleOpen}
+              style={{
+                color: "white",
+                backgroundColor: "#6750A4",
+                fontWeight: 500,
+                borderRadius: "0.5rem",
+                fontSize: "0.875rem",
+                paddingLeft: "1.25rem",
+                paddingRight: "1.25rem",
+                paddingTop: "0.625rem",
+                paddingBottom: "0.625rem",
+                marginRight: "0.5rem",
+                marginBottom: "0.5rem",
+              }}
+            >
               Contact Us
             </DesktopMenuItem>
           </DesktopMenu>
@@ -192,7 +208,7 @@ const Navbar = () => {
           <DrawerItem onClick={() => handleNavigation("#gallery")}>
             <Typography>Gallery</Typography>
           </DrawerItem>
-          <DrawerItem onClick={() => handleNavigation("#about")}>
+          <DrawerItem onClick={() => navigate("/aboutUs")}>
             <Typography>About</Typography>
           </DrawerItem>
           <DrawerItem onClick={() => handleNavigation("#services")}>
