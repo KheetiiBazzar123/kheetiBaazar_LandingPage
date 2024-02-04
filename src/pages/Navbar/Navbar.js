@@ -169,7 +169,7 @@ const Navbar = () => {
           <DesktopMenu>
             <DesktopMenuItem onClick={() => handleNavigation("#home")}>Home</DesktopMenuItem>
             <DesktopMenuItem onClick={() => handleNavigation("#gallery")}>Gallery</DesktopMenuItem>
-            <DesktopMenuItem onClick={() => handleNavigation("#about")}>About</DesktopMenuItem>
+            <DesktopMenuItem onClick={() => navigate("/aboutUs")}>About</DesktopMenuItem>
             <DesktopMenuItem onClick={() => handleNavigation("#services")}>
               Services
             </DesktopMenuItem>

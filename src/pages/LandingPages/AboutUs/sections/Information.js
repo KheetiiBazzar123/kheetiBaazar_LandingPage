@@ -22,8 +22,9 @@ import MKBox from "components/MKBox";
 
 // Material Kit 2 React examples
 import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
-import CenteredBlogCard from "examples/Cards/BlogCards/CenteredBlogCard";
-
+// import CenteredBlogCard from "examples/Cards/BlogCards/CenteredBlogCard";
+// imagage
+import CardImage from "../../../../assets/imagesWeb/images/cardImages/card1.jpg";
 function Information() {
   return (
     <MKBox component="section" py={12}>
@@ -34,45 +35,41 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <MKBox mb={5}>
                   <DefaultInfoCard
-                    icon="public"
-                    title="Fully integrated"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Sustainable Agriculture"
+                    description="Our core philosophy revolves around sustainable agriculture practices. We believe in nurturing the land in a manner that preserves and enhances its fertility for future generations."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12} md={6}>
                 <MKBox mb={5}>
                   <DefaultInfoCard
-                    icon="payments"
-                    title="Payments functionality"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Preserving Agricultural Traditions"
+                    description="While embracing modern methodologies, we hold the rich tapestry of agricultural traditions close to our hearts."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12} md={6}>
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
-                    icon="apps"
-                    title="Prebuilt components"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Economic Viability"
+                    description="Recognizing the significance of agriculture as an economic backbone, we work towards ensuring the economic viability of farming endeavors. By facilitating fair trade practices, market access, and financial support, we contribute to the financial stability of farming communities, fostering a resilient and thriving agricultural sector."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12} md={6}>
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
-                    icon="3p"
-                    title="Improved platform"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Community-Centric Approach"
+                    description="At the heart of our endeavors lies a deep commitment to community welfare. We engage with local communities, providing training, resources, and support to empower farmers."
                   />
                 </MKBox>
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} lg={4} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
-            <CenteredBlogCard
-              image="https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-              title="Get insights on Search"
+            {/* <CenteredBlogCard
+              image=""
+              https:title="Get insights on Search" //images.unsplash.com/photo-1544717302-de2939b7ef71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80""
               description="Website visitors today demand a frictionless user expericence — especially when using search. Because of the hight standards."
               action={{
                 type: "internal",
@@ -80,7 +77,8 @@ function Information() {
                 color: "info",
                 label: "find out more",
               }}
-            />
+            /> */}
+            <img src={CardImage} alt="image" />
           </Grid>
         </Grid>
       </Container>

@@ -45,11 +45,10 @@ function Team() {
         <Grid container>
           <Grid item xs={12} md={8} sx={{ mb: 6 }}>
             <MKTypography variant="h3" color="white">
-              The Executive Team
+              Our Team
             </MKTypography>
             <MKTypography variant="body2" color="white" opacity={0.8}>
-              There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-              at. That&apos;s my skill.
+              We Are Introducing Our Team
             </MKTypography>
           </Grid>
         </Grid>
@@ -58,9 +57,9 @@ function Team() {
             <MKBox mb={1}>
               <HorizontalTeamCard
                 image={team1}
-                name="Emma Roberts"
-                position={{ color: "info", label: "UI Designer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                name="Ranjit "
+                position={{ color: "info", label: "Founder and Visionary" }}
+                description="Their commitment to eco-friendly practices and community well-being inspires every aspect of our agricultural journey."
               />
             </MKBox>
           </Grid>
@@ -68,9 +67,9 @@ function Team() {
             <MKBox mb={1}>
               <HorizontalTeamCard
                 image={team2}
-                name="William Pearce"
-                position={{ color: "info", label: "Boss" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                name="Amit Thakur"
+                position={{ color: "info", label: "Technology Specialist" }}
+                description="At the forefront of innovation is [Technology Specialist's Name], our resident tech expert. "
               />
             </MKBox>
           </Grid>
@@ -78,9 +77,9 @@ function Team() {
             <MKBox mb={{ xs: 1, lg: 0 }}>
               <HorizontalTeamCard
                 image={team3}
-                name="Ivana Flow"
-                position={{ color: "info", label: "Athlete" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                name="Rajat"
+                position={{ color: "info", label: "Community Engagement Coordinator" }}
+                description="Fostering strong ties with the local community is [Coordinator's Name], our Community Engagement Coordinator."
               />
             </MKBox>
           </Grid>
@@ -88,9 +87,9 @@ function Team() {
             <MKBox mb={{ xs: 1, lg: 0 }}>
               <HorizontalTeamCard
                 image={team4}
-                name="Marquez Garcia"
-                position={{ color: "info", label: "JS Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
+                name="Pandey"
+                position={{ color: "info", label: "Finance and Operations Manager" }}
+                description="Responsible for the financial health of our farm is [Manager's Name], our Finance and Operations Manager."
               />
             </MKBox>
           </Grid>
