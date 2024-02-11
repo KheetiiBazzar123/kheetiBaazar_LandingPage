@@ -13,7 +13,7 @@ function Information() {
         <Grid container spacing={3} alignItems="center">
           {/* Text Content */}
           <Grid item xs={12} md={6}>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} alignItems="flex-end">
               <Grid item xs={12}>
                 <MKBox mb={3}>
                   <DefaultInfoCard
