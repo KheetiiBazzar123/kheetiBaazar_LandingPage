@@ -25,10 +25,10 @@ import MKTypography from "components/MKTypography";
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 // Images
-import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
-import team4 from "assets/images/ivana-square.jpg";
+import team1 from "assets/imagesWeb/images/teamImage/amit.jpeg";
+import team2 from "assets/imagesWeb/images/teamImage/pandey.jpeg";
+import team3 from "assets/imagesWeb/images/teamImage/rajat.jpeg";
+import team4 from "assets/imagesWeb/images/teamImage/ranjit.jpeg";
 
 function Team() {
   return (
@@ -56,7 +56,7 @@ function Team() {
           <Grid item xs={12} lg={6}>
             <MKBox mb={1}>
               <HorizontalTeamCard
-                image={team1}
+                image={team4}
                 name="Ranjit "
                 position={{ color: "info", label: "Founder and Visionary" }}
                 description="Their commitment to eco-friendly practices and community well-being inspires every aspect of our agricultural journey."
@@ -66,7 +66,7 @@ function Team() {
           <Grid item xs={12} lg={6}>
             <MKBox mb={1}>
               <HorizontalTeamCard
-                image={team2}
+                image={team1}
                 name="Amit Thakur"
                 position={{ color: "info", label: "Technology Specialist" }}
                 description="At the forefront of innovation is [Technology Specialist's Name], our resident tech expert. "
@@ -86,7 +86,7 @@ function Team() {
           <Grid item xs={12} lg={6}>
             <MKBox mb={{ xs: 1, lg: 0 }}>
               <HorizontalTeamCard
-                image={team4}
+                image={team2}
                 name="Pandey"
                 position={{ color: "info", label: "Finance and Operations Manager" }}
                 description="Responsible for the financial health of our farm is [Manager's Name], our Finance and Operations Manager."
