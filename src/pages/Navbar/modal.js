@@ -25,6 +25,8 @@ function ContactModal({ open, handleClose }) {
     state: "",
     Landmark: "",
     address: "",
+    capacity: "",
+    harvestingSession: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -89,6 +91,8 @@ function ContactModal({ open, handleClose }) {
           state: "",
           landmark: "",
           address: "",
+          capacity: "",
+          harvestingSession: "",
         });
         toast.success("Data Saved Successfully!!!", {
           classNames: "toast-message-success",
@@ -195,6 +199,28 @@ function ContactModal({ open, handleClose }) {
             variant="outlined"
             value={formData.address}
             onChange={handleChange}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            name="harvestingSession"
+            label="Harvesting Session"
+            variant="outlined"
+            value={formData.harvestingSession}
+            onChange={handleChange}
+            error={!!errors.harvestingSession}
+            helperText={errors.harvestingSession}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            name="capacity"
+            label="Capacity (in ton)"
+            variant="outlined"
+            value={formData.capacity}
+            onChange={handleChange}
+            error={!!errors.capacity}
+            helperText={errors.capacity}
           />
           <RadioGroup name="selection" value={formData.selection} onChange={handleChange}>
             <FormControlLabel value="isFarmer" control={<Radio />} label="Farmer" />
