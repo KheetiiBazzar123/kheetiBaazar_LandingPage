@@ -18,6 +18,8 @@ function ContactModal({ open, handleClose }) {
     email: "",
     selection: "",
     message: "",
+    capacity: "",
+    harvestingSession: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -149,6 +151,28 @@ function ContactModal({ open, handleClose }) {
               label="Consumer/Vendor"
             />
           </RadioGroup>
+          <TextField
+            fullWidth
+            margin="normal"
+            name="harvestingSession"
+            label="Harvesting Session"
+            variant="outlined"
+            value={formData.harvestingSession}
+            onChange={handleChange}
+            error={!!errors.harvestingSession}
+            helperText={errors.harvestingSession}
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            name="capacity"
+            label="Capacity (in tons)"
+            variant="outlined"
+            value={formData.capacity}
+            onChange={handleChange}
+            error={!!errors.capacity}
+            helperText={errors.capacity}
+          />
           <TextField
             fullWidth
             margin="normal"
