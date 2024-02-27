@@ -15,6 +15,7 @@ import Presentation from "layouts/pages/presentation";
 import routes from "routes";
 import "./assets/css/style.css";
 import Navbar from "pages/Navbar/Navbar";
+import AboutUs from "pages/LandingPages/AboutUs/index";
 export default function App() {
   const { pathname } = useLocation();
 
@@ -44,7 +45,8 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
         <Route path="/" element={<Presentation />} />
-        {/* <Route path="*" element={<Navigate to="/presentation" />} /> */}
+        {/* <Route path="/about-us" element={<Navigate to="/presentation" />} /> */}
+        <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
     </ThemeProvider>
   );

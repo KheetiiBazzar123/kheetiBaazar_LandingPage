@@ -25,11 +25,11 @@ import MKTypography from "components/MKTypography";
 
 function DefaultInfoCard({ color, icon, title, description, direction, small }) {
   return (
-    <MKBox lineHeight={1} p={direction === "center" ? 2 : 0} textAlign={direction}>
+    <MKBox lineHeight={1} p={direction === "center" ? 1 : 0} textAlign={direction}>
       {typeof icon === "string" ? (
         <MKTypography
           display="block"
-          variant={direction === "center" ? "h2" : "h3"}
+          variant={direction === "center" ? "h4" : "h5"}
           color={color}
           textGradient
         >
@@ -43,8 +43,8 @@ function DefaultInfoCard({ color, icon, title, description, direction, small }) 
         display="block"
         variant="5"
         fontWeight="bold"
-        mt={direction === "center" ? 1 : 2}
-        mb={1.5}
+        mt={direction === "center" ? 3 : 4}
+        mb={1}
       >
         {title}
       </MKTypography>
@@ -52,8 +52,8 @@ function DefaultInfoCard({ color, icon, title, description, direction, small }) 
         display="block"
         variant={small ? "button" : "body2"}
         color="text"
-        pr={direction === "left" ? 6 : 0}
-        pl={direction === "right" ? 6 : 0}
+        pr={direction === "left" ? 0 : 0}
+        pl={direction === "right" ? 0 : 0}
       >
         {description}
       </MKTypography>

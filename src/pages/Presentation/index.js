@@ -10,7 +10,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
 import Divider from "@mui/material/Divider";
-
+// import { Link } from "react-router-dom";
 // Material Kit 2 React examples
 import DefaultFooter from "examples/Footers/DefaultFooter";
 // import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
@@ -97,7 +97,6 @@ function Presentation() {
         }}
       >
         <Counters />
-
         <Container sx={{ width: "100%" }} id="gallery">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
