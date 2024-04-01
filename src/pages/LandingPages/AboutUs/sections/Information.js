@@ -35,9 +35,9 @@ Goal To empower Indian farmers with cutting-edge technology transforming traditi
               <Grid item xs={12}>
                 <MKBox mb={3}>
                   <DefaultInfoCard
-                    title="Organic Harvest Hub: Empowering Farmers"
+                    title="Farm2Table Connect:Empowering Farmers, Enriching Consumers"
                     description="
-                    Goal: To establish a thriving ecosystem where Indian farmers can access technology-driven tools and resources through our e-marketplace, fostering organic farming practices and elevating agricultural sustainability."
+                    Goal: To revolutionize the agricultural supply chain by directly connecting farmers with consumers through our e-marketplace, eliminating intermediaries, expanding market access for farmers, and providing consumers with access to fresh, organic produce."
                   />
                 </MKBox>
               </Grid>
