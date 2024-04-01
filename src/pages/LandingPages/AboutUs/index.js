@@ -80,10 +80,10 @@ function AboutUs() {
               About Us
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              In the dynamic realm of agriculture, our commitment to sustainable farming practices
-              defines our ethos. Rooted in a profound respect for the land and its bountiful
-              resources, our about us narrative encapsulates a passion for cultivating not just
-              crops but fostering a harmonious relationship between nature and agriculture.
+              Kheetii BaZaar is an agriTech company, incorporated in 2023 in Kolkata. Our Vision is
+              to &quot;Transform the Traditional agri Marketing System with Tech enabled
+              e-Marketplace, Improve the life of INDIAN FARMERS, and shift the present agri
+              practices towards Organic&quot;
             </MKTypography>
             {/* <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
               create account

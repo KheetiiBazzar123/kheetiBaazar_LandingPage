@@ -29,6 +29,7 @@ import team1 from "assets/imagesWeb/images/teamImage/amit.jpeg";
 import team2 from "assets/imagesWeb/images/teamImage/pandey.jpeg";
 import team3 from "assets/imagesWeb/images/teamImage/rajat.jpeg";
 import team4 from "assets/imagesWeb/images/teamImage/ranjit.jpeg";
+import team5 from "assets/imagesWeb/images/teamImage/nidhi.jpeg";
 
 function Team() {
   return (
@@ -56,10 +57,10 @@ function Team() {
           <Grid item xs={12} lg={6}>
             <MKBox mb={1}>
               <HorizontalTeamCard
-                image={team4}
-                name="Ranjit "
-                position={{ color: "info", label: "Founder and Visionary" }}
-                description="Their commitment to eco-friendly practices and community well-being inspires every aspect of our agricultural journey."
+                image={team5}
+                name="Nidhi "
+                position={{ color: "info", label: "Chief Technology Officer" }}
+                description="Driving innovation through technology to achieve our strategic vision. Empowering teams to harness the full potential"
               />
             </MKBox>
           </Grid>
@@ -68,8 +69,8 @@ function Team() {
               <HorizontalTeamCard
                 image={team1}
                 name="Amit Thakur"
-                position={{ color: "info", label: "Technology Specialist" }}
-                description="At the forefront of innovation is [Technology Specialist's Name], our resident tech expert. "
+                position={{ color: "info", label: " Chief Operations officer" }}
+                description="Streamlining operational processes to enhance efficiency and optimize resource allocation."
               />
             </MKBox>
           </Grid>
@@ -78,8 +79,8 @@ function Team() {
               <HorizontalTeamCard
                 image={team3}
                 name="Rajat"
-                position={{ color: "info", label: "Community Engagement Coordinator" }}
-                description="Fostering strong ties with the local community is [Coordinator's Name], our Community Engagement Coordinator."
+                position={{ color: "info", label: "Chief Marketing officer" }}
+                description="FCrafting compelling brand narratives that resonate with our target audience and drive customer engagement."
               />
             </MKBox>
           </Grid>
@@ -88,8 +89,18 @@ function Team() {
               <HorizontalTeamCard
                 image={team2}
                 name="Pandey"
-                position={{ color: "info", label: "Finance and Operations Manager" }}
-                description="Responsible for the financial health of our farm is [Manager's Name], our Finance and Operations Manager."
+                position={{ color: "info", label: "Chief Sales officer" }}
+                description="Leading a dynamic sales force to exceed revenue targets through strategic planning and client-centric approaches."
+              />
+            </MKBox>
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <MKBox mb={1}>
+              <HorizontalTeamCard
+                image={team4}
+                name="Sanjay"
+                position={{ color: "info", label: "Chief executive officer" }}
+                description="Guiding the company with a bold vision and unwavering commitment to excellence, driving sustainable growth and shareholder value."
               />
             </MKBox>
           </Grid>
