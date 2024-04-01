@@ -80,7 +80,7 @@ function Team() {
                 image={team3}
                 name="Rajat"
                 position={{ color: "info", label: "Chief Marketing officer" }}
-                description="FCrafting compelling brand narratives that resonate with our target audience and drive customer engagement."
+                description="Crafting compelling brand narratives that resonate with our target audience and drive customer engagement."
               />
             </MKBox>
           </Grid>

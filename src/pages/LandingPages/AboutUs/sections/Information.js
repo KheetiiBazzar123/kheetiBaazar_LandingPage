@@ -4,8 +4,8 @@ import Grid from "@mui/material/Grid";
 import MKBox from "components/MKBox";
 import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
 import CenteredBlogCard from "examples/Cards/BlogCards/CenteredBlogCard";
-import CardImage from "../../../../assets/imagesWeb/images/cardImages/card1.jpg";
-
+// import CardImage from "../../../../assets/imagesWeb/images/cardImages/card1.jpg";
+import CardImage from "../../../../assets/imagesWeb/images/aboutSection/abotBg.jpg";
 function Information() {
   return (
     <MKBox component="section" py={12}>
@@ -17,32 +17,35 @@ function Information() {
               <Grid item xs={12}>
                 <MKBox mb={3}>
                   <DefaultInfoCard
-                    title="Sustainable Agriculture"
-                    description="Our core philosophy revolves around sustainable agriculture practices. We believe in nurturing the land in a manner that preserves and enhances its fertility for future generations."
+                    title="HarvestTech Solutions: Revolutionizing Agriculture"
+                    description="
+Goal To empower Indian farmers with cutting-edge technology transforming traditional agricultural practices into sustainable organic methods through our innovative e-marketplace platform."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12}>
                 <MKBox mb={3}>
                   <DefaultInfoCard
-                    title="Preserving Agricultural Traditions"
-                    description="While embracing modern methodologies, we hold the rich tapestry of agricultural traditions close to our hearts."
+                    title="Bridging the Gap Between Farmers and Technology."
+                    description="
+                    Goal: To bridge the technological gap in Indian agriculture by providing a comprehensive e-marketplace solution, enhancing farmers' livelihoods and fostering a transition towards organic farming practices."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12}>
                 <MKBox mb={3}>
                   <DefaultInfoCard
-                    title="Economic Viability"
-                    description="Recognizing the significance of agriculture as an economic backbone, we work towards ensuring the economic viability of farming endeavors. By facilitating fair trade practices, market access, and financial support, we contribute to the financial stability of farming communities, fostering a resilient and thriving agricultural sector."
+                    title="Organic Harvest Hub: Empowering Farmers"
+                    description="
+                    Goal: To establish a thriving ecosystem where Indian farmers can access technology-driven tools and resources through our e-marketplace, fostering organic farming practices and elevating agricultural sustainability."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12}>
                 <MKBox mb={3}>
                   <DefaultInfoCard
-                    title="Community-Centric Approach"
-                    description="At the heart of our endeavors lies a deep commitment to community welfare. We engage with local communities, providing training, resources, and support to empower farmers."
+                    title="GreenVine AgriTech: Cultivating Futures, Digitally"
+                    description="Goal: To cultivate a future where Indian agriculture thrives on sustainability and innovation, leveraging our e-marketplace platform to empower farmers, drive organic practices, and revolutionize the agricultural landscape."
                   />
                 </MKBox>
               </Grid>
