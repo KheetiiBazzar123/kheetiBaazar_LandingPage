@@ -19,7 +19,9 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Kit 2 React components
-import MKBox from "components/MKBox";
+// import MKBox from "components/MKBox";
+import MKBox from "../../../components/MKBox/MKBoxRoot";
+
 import MKTypography from "components/MKTypography";
 // import MKButton from "components/MKButton";
 

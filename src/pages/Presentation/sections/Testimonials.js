@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
-import MKBox from "components/MKBox";
+import MKBox from "../../../components/MKBox/MKBoxRoot";
 import MKTypography from "components/MKTypography";
 
 function Information() {

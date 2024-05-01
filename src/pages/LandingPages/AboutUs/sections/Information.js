@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import MKBox from "components/MKBox";
+import MKBox from "../../../../components/MKBox/MKBoxRoot";
 import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
 import CenteredBlogCard from "examples/Cards/BlogCards/CenteredBlogCard";
 // import CardImage from "../../../../assets/imagesWeb/images/cardImages/card1.jpg";

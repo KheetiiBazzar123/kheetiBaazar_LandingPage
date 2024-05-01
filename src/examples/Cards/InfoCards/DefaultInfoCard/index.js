@@ -20,7 +20,7 @@ import PropTypes from "prop-types";
 import Icon from "@mui/material/Icon";
 
 // Material Kit 2 React components
-import MKBox from "components/MKBox";
+import MKBox from "../../../../components/MKBox/MKBoxRoot";
 import MKTypography from "components/MKTypography";
 
 function DefaultInfoCard({ color, icon, title, description, direction, small }) {
