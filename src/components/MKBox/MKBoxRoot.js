@@ -1,25 +1,18 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
-export default styled(Box)(({ theme, ownerState }) => {
+export default styled(Box)(({ theme, ownerState = {} }) => {
   const { palette, functions, borders, boxShadows } = theme;
-  const { variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow } = ownerState;
+  const {
+    variant,
+    bgColor = "white",
+    color = "text",
+    opacity = 1,
+    borderRadius = "xs",
+    shadow = "none",
+    coloredShadow = false,
+  } = ownerState;
 
   const { gradients, grey, white } = palette;
   const { linearGradient } = functions;
@@ -80,36 +73,34 @@ export default styled(Box)(({ theme, ownerState }) => {
   let backgroundValue = bgColor;
 
   if (variant === "gradient") {
-    backgroundValue = validGradients.find((el) => el === bgColor)
+    backgroundValue = validGradients.includes(bgColor)
       ? linearGradient(gradients[bgColor].main, gradients[bgColor].state)
       : white.main;
-  } else if (validColors.find((el) => el === bgColor)) {
+  } else if (validColors.includes(bgColor)) {
     backgroundValue = palette[bgColor] ? palette[bgColor].main : greyColors[bgColor];
-  } else {
-    backgroundValue = bgColor;
   }
 
   // color value
   let colorValue = color;
 
-  if (validColors.find((el) => el === color)) {
+  if (validColors.includes(color)) {
     colorValue = palette[color] ? palette[color].main : greyColors[color];
   }
 
   // borderRadius value
   let borderRadiusValue = borderRadius;
 
-  if (validBorderRadius.find((el) => el === borderRadius)) {
+  if (validBorderRadius.includes(borderRadius)) {
     borderRadiusValue = radius[borderRadius];
   }
 
   // boxShadow value
   let boxShadowValue = "none";
 
-  if (validBoxShadows.find((el) => el === shadow)) {
+  if (validBoxShadows.includes(shadow)) {
     boxShadowValue = boxShadows[shadow];
-  } else if (coloredShadow) {
-    boxShadowValue = colored[coloredShadow] ? colored[coloredShadow] : "none";
+  } else if (coloredShadow && colored[coloredShadow]) {
+    boxShadowValue = colored[coloredShadow];
   }
 
   return {

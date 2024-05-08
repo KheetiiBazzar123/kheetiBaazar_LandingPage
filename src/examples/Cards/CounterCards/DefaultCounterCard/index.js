@@ -20,7 +20,7 @@ import PropTypes from "prop-types";
 import CountUp from "react-countup";
 
 // Material Kit 2 React components
-import MKBox from "components/MKBox";
+import MKBox from "../../../../components/MKBox/MKBoxRoot";
 import MKTypography from "components/MKTypography";
 
 function DefaultCounterCard({ color, count, title, description, ...rest }) {

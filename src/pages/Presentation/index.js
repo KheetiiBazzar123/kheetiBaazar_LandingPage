@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import heroImage from "../../assets/imagesWeb/images/mainSection/HeroImage.jpg";
 // import heroImage from "../../assets/imagesWeb/images/mainSection/heroImage2.jpg";
 // Material Kit 2 React components
-import MKBox from "components/MKBox";
+import MKBox from "../../components/MKBox/MKBoxRoot";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
 import Divider from "@mui/material/Divider";

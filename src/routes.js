@@ -1,6 +1,5 @@
 // @mui material components
 import Icon from "@mui/material/Icon";
-
 // @mui icons
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -34,7 +33,7 @@ const routes = [
   {
     name: "Services",
     icon: <GitHubIcon />,
-    href: "https://www.github.com/creativetimofficial/material-kit-react",
+    href: "#/",
   },
 ];
 
