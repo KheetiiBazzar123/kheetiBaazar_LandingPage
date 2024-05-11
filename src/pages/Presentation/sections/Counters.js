@@ -50,7 +50,7 @@ function Counters() {
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={0}
-              title="Parterns"
+              title="Partners"
               description=" we thrive on collaboration and partnership, recognizing the power of synergy in transforming agricultural landscapes."
             />
           </Grid>
