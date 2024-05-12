@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import "../../assets/css/style.css";
-
+import "react-toastify/dist/ReactToastify.css";
 import {
   Modal,
   Box,
@@ -11,247 +10,194 @@ import {
   Radio,
   FormControlLabel,
   Button,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import PropTypes from "prop-types";
 
-function ContactModal({ open, handleClose }) {
-  const [formData, setFormData] = useState({
+function ContactModal({ open, handleClose: close }) {
+  const initialFormData = {
     name: "",
     mobileNumber: "",
     email: "",
-    selection: "",
+    selection: "Farmer",
     message: "",
     city: "",
     state: "",
-    Landmark: "",
+    landmark: "",
     address: "",
     capacity: "",
     harvestingSession: "",
-  });
+  };
 
+  const requiredFields = ["name", "mobileNumber", "selection"];
+
+  const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if (name === "mobileNumber" && !/^[0-9]*$/.test(value)) return;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (value.trim() !== "" && errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleClose = () => {
+    setFormData(initialFormData);
+    setErrors({});
+    close();
   };
 
   const validate = () => {
     let tempErrors = {};
-    tempErrors.name =
-      /^[a-zA-Z ]+$/.test(formData.name) || formData.name === ""
-        ? ""
-        : "Only characters are allowed.";
-    tempErrors.mobileNumber = /^[0-9]*$/.test(formData.mobileNumber)
-      ? ""
-      : "Only numbers are allowed.";
-    tempErrors.email =
-      /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(formData.email) ||
-      formData.email === ""
-        ? ""
-        : "Email is not valid.";
-    // tempErrors.selection = formData.selection ? "" : "This field is required.";
-    // tempErrors.message = formData.message ? "" : "This field is required.";
+    if (!formData.name.trim()) tempErrors.name = "Name is required.";
+    if (!/^\d+$/.test(formData.mobileNumber) || !formData.mobileNumber.trim())
+      tempErrors.mobileNumber = "Mobile number is required and must be valid.";
+    if (!formData.selection.trim()) tempErrors.selection = "Please select a role.";
 
     setErrors(tempErrors);
-    return Object.values(tempErrors).every((x) => x === "");
+    return Object.keys(tempErrors).length === 0;
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!validate()) return;
+    if (!validate()) {
+      toast.warning("Please correct the errors before submitting.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: {
+          fontSize: "13px",
+        },
+      });
+      return;
+    }
 
-    const dataToSend = {
-      ...formData,
-      user_type: formData.selection === "isFarmer" ? "Farmer" : "Consumer/Vendor",
-    };
+    const formBody = Object.keys(formData)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(formData[key]))
+      .join("&");
 
     try {
-      const url = "https://sheet.best/api/sheets/fc9acac8-bbcf-449d-9dda-ad477776bd62";
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify([dataToSend]),
-      });
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxpTApiOCO0eJQpyyII-KE4nGI0LIX3JILlxSojWbH8iir-Ejm1kMPl1OT5fxizyWGd/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formBody,
+        }
+      );
 
       if (response.ok) {
-        setFormData({
-          name: "",
-          mobileNumber: "",
-          email: "",
-          selection: "",
-          message: "",
-          city: "",
-          state: "",
-          landmark: "",
-          address: "",
-          capacity: "",
-          harvestingSession: "",
+        toast.success("Data saved successfully", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          style: {
+            fontSize: "13px",
+          },
         });
-        toast.success("Data Saved Successfully!!!", {
-          classNames: "toast-message-success",
-        });
-
         handleClose();
       } else {
-        toast.error("Error In Saving Data", {
-          className: "toast-message-error",
+        toast.error("Failed to save data. Please try again.", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          style: {
+            fontSize: "13px",
+          },
         });
       }
     } catch (error) {
-      console.error("Error: ", error);
+      toast.error("Network error, Failed to save data. Please try again.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: {
+          fontSize: "13px",
+        },
+      });
     }
   };
 
   return (
-    <Modal open={open} onClose={handleClose}>
+    <Modal open={open} onClose={handleClose} fullScreen={fullScreen}>
       <Box
         sx={{
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 400,
+          width: { xs: "100%", sm: "100%", md: 600 },
           bgcolor: "background.paper",
           boxShadow: 24,
           p: 4,
-          maxHeight: "90vh", // 90% of the viewport height
           overflowY: "auto",
+          maxHeight: "90vh",
         }}
       >
-        <Typography variant="h6" component="h2">
+        <Typography variant="h6" component="h2" sx={{ mb: 2 }}>
           Contact Us
         </Typography>
         <form onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            margin="normal"
-            name="name"
-            label="Name"
-            variant="outlined"
-            value={formData.name}
-            onChange={handleChange}
-            error={!!errors.name}
-            helperText={errors.name}
-            required
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="mobileNumber"
-            label="Mobile Number"
-            variant="outlined"
-            value={formData.mobileNumber}
-            onChange={handleChange}
-            error={!!errors.mobileNumber}
-            helperText={errors.mobileNumber}
-            required
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="email"
-            label="Email"
-            variant="outlined"
-            value={formData.email}
-            onChange={handleChange}
-            error={!!errors.email}
-            helperText={errors.email}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="city"
-            label="City"
-            variant="outlined"
-            value={formData.city}
-            onChange={handleChange}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="state"
-            label="State"
-            variant="outlined"
-            value={formData.state}
-            onChange={handleChange}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="landmark"
-            label="Landmark"
-            variant="outlined"
-            value={formData.landmark}
-            onChange={handleChange}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="address"
-            label="Address"
-            variant="outlined"
-            value={formData.address}
-            onChange={handleChange}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="harvestingSession"
-            label="Harvesting Session"
-            variant="outlined"
-            value={formData.harvestingSession}
-            onChange={handleChange}
-            error={!!errors.harvestingSession}
-            helperText={errors.harvestingSession}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            name="capacity"
-            label="Capacity (in ton)"
-            variant="outlined"
-            value={formData.capacity}
-            onChange={handleChange}
-            error={!!errors.capacity}
-            helperText={errors.capacity}
-          />
-          <RadioGroup name="selection" value={formData.selection} onChange={handleChange}>
-            <FormControlLabel value="isFarmer" control={<Radio />} label="Farmer" />
-            <FormControlLabel
-              value="isConsumerVendor"
-              control={<Radio />}
-              label="Consumer/Vendor"
-            />
-          </RadioGroup>
-          <TextField
-            fullWidth
-            margin="normal"
-            name="message"
-            label="Message"
-            multiline
-            rows={4}
-            variant="outlined"
-            value={formData.message}
-            onChange={handleChange}
-            error={!!errors.message}
-            helperText={errors.message}
-          />
+          {Object.keys(formData).map((key) =>
+            key !== "selection" ? (
+              <TextField
+                key={key}
+                fullWidth
+                margin="normal"
+                name={key}
+                label={
+                  key.charAt(0).toUpperCase() +
+                  key
+                    .slice(1)
+                    .replace(/([A-Z])/g, " $1")
+                    .trim()
+                }
+                variant="outlined"
+                value={formData[key]}
+                onChange={handleChange}
+                error={!!errors[key]}
+                helperText={errors[key]}
+                required={requiredFields.includes(key)}
+              />
+            ) : (
+              <RadioGroup key={key} name={key} value={formData[key]} onChange={handleChange} row>
+                <FormControlLabel value="isFarmer" control={<Radio />} label="Farmer" />
+                <FormControlLabel
+                  value="Consumer/Vendor"
+                  control={<Radio />}
+                  label="Consumer/Vendor"
+                />
+              </RadioGroup>
+            )
+          )}
           <Button
             type="submit"
             variant="contained"
-            sx={{ mt: 2, mb: 2 }}
-            style={{ backgroundColor: "#6750A4", color: "#fff" }}
+            sx={{ mt: 2, mb: 2, backgroundColor: "#6750A4", color: "#fff" }}
           >
             Submit
           </Button>
-          <Button variant="text" onClick={handleClose}>
+          <Button variant="text" onClick={handleClose} sx={{ ml: 2 }}>
             Close
           </Button>
         </form>
