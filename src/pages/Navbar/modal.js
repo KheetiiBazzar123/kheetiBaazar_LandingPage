@@ -12,6 +12,7 @@ import {
   Button,
   useMediaQuery,
   useTheme,
+  Backdrop,
 } from "@mui/material";
 import PropTypes from "prop-types";
 
@@ -139,7 +140,16 @@ function ContactModal({ open, handleClose: close }) {
   };
 
   return (
-    <Modal open={open} onClose={handleClose} fullScreen={fullScreen}>
+    <Modal
+      open={open}
+      onClose={handleClose}
+      fullScreen={fullScreen}
+      BackdropComponent={Backdrop}
+      BackdropProps={{
+        timeout: 500,
+        style: { backgroundColor: "rgba(255, 255, 255, 0.4)", backdropFilter: "blur(3px)" },
+      }}
+    >
       <Box
         sx={{
           position: "absolute",
