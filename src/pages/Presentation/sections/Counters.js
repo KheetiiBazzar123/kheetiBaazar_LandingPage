@@ -31,27 +31,28 @@ function Counters() {
         <Grid container item xs={12} lg={9} sx={{ mx: "auto" }}>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
-              count={10}
+              count={3}
               suffix="+"
               title="Product Items"
-              description="Renowned worldwide for its distinctive aroma and long, slender grains, Basmati rice from India is a culinary treasure"
+              description="Our selection includes premium onions, ginger, and garlic, each known for enhancing flavor and quality in culinary dishes worldwide."
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, mx: 0 }} />
             <DefaultCounterCard
-              count={3}
+              count={2}
               suffix="+"
               title="States"
-              description="our mission extends beyond boundaries. With a steadfast commitment to agricultural advancement, we proudly operate across numerous cities, reaching out to farmers far and wide."
+              description="Operating in both Pune and Kolkata, our mission supports local farmers and promotes sustainable agricultural growth across regional boundaries."
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={0}
+              suffix="+"
               title="Partners"
-              description=" we thrive on collaboration and partnership, recognizing the power of synergy in transforming agricultural landscapes."
+              description="We believe in the power of partnerships, working collaboratively to transform agricultural practices and improve supply chains."
             />
           </Grid>
         </Grid>

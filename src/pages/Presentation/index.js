@@ -34,8 +34,8 @@ import WhoWeAreComponent from "components/WhoWeAre/whoWeAre";
 import footerRoutes from "footer.routes";
 
 // Images
-import card1 from "../../assets/imagesWeb/images/cardImages/card1.jpg";
-import card2 from "../../assets/imagesWeb/images/cardImages/card2.png";
+import card1 from "../../assets/imagesWeb/images/cardImages/card1.webp";
+import card2 from "../../assets/imagesWeb/images/cardImages/card2.webp";
 import card3 from "../../assets/imagesWeb/images/cardImages/card3.jpg";
 import card4 from "../../assets/imagesWeb/images/cardImages/card4.jpg";
 import card5 from "../../assets/imagesWeb/images/cardImages/card5.jpg";

@@ -26,8 +26,6 @@ import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 // Images
 import team1 from "assets/imagesWeb/images/teamImage/amit.jpeg";
-import team2 from "assets/imagesWeb/images/teamImage/pandey.jpeg";
-import team3 from "assets/imagesWeb/images/teamImage/rajat.jpeg";
 import team4 from "assets/imagesWeb/images/teamImage/ranjit.jpeg";
 import team5 from "assets/imagesWeb/images/teamImage/nidhi.jpeg";
 
@@ -71,26 +69,6 @@ function Team() {
                 name="Amit Thakur"
                 position={{ color: "info", label: " Chief Operations officer" }}
                 description="Streamlining operational processes to enhance efficiency and optimize resource allocation."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team3}
-                name="Rajat"
-                position={{ color: "info", label: "Chief Marketing officer" }}
-                description="Crafting compelling brand narratives that resonate with our target audience and drive customer engagement."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team2}
-                name="Pandey"
-                position={{ color: "info", label: "Chief Sales officer" }}
-                description="Leading a dynamic sales force to exceed revenue targets through strategic planning and client-centric approaches."
               />
             </MKBox>
           </Grid>
