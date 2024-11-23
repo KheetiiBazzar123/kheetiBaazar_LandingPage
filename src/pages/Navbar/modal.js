@@ -87,10 +87,13 @@ function ContactModal({ open, handleClose: close }) {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxpTApiOCO0eJQpyyII-KE4nGI0LIX3JILlxSojWbH8iir-Ejm1kMPl1OT5fxizyWGd/exec",
+        "https://api.sheetbest.com/sheets/e367acf2-4dd5-4e8c-8d37-a46321573214",
         {
           method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-Api-Key": "C1eo#oUzVjT$Rw-R!2uTl4jAB66jhb@L9#izq#nSjKvH#Y@E8QMAJoeYHnh7rrc@",
+          },
           body: formBody,
         }
       );
